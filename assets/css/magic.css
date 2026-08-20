@@ -592,6 +592,16 @@ body[data-active-task="alternate-uses"] {
   margin: 0;
 }
 
+.footer-sep {
+  display: inline-block;
+  margin: 0 0.85em;
+  font-size: 1.15em;
+  line-height: 1;
+  vertical-align: -0.05em;
+  color: var(--text);
+  opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .sidebar {
