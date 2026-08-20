@@ -425,18 +425,18 @@ body[data-active-task="alternate-uses"] {
 }
 
 .report-heading {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
   font-family: "Fraunces", Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.85rem;
   font-weight: 600;
   line-height: 1.25;
   color: var(--task-accent-deep);
 }
 
 .report-subheading {
-  margin: 1.5rem 0 0.65rem;
+  margin: 1.5rem 0 0.7rem;
   font-family: "Fraunces", Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.25;
   color: var(--task-accent);
@@ -493,6 +493,10 @@ body[data-active-task="alternate-uses"] {
 
 .report-block[data-section="task-coverage"] .report-subheading--first {
   margin-top: 0.35rem;
+}
+
+.report-body {
+  font-size: 1.08rem;
 }
 
 .report-body > *:first-child {
