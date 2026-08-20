@@ -31,6 +31,7 @@ title: MAGIC Tasks
   {% capture task_description %}{% include_relative content/busy-board/task-description.md %}{% endcapture %}
   {% capture what_the_child_does %}{% include_relative content/busy-board/what-the-child-does.md %}{% endcapture %}
   {% capture information_collected %}{% include_relative content/busy-board/information-collected.md %}{% endcapture %}
+  {% capture subcomponent_measured %}{% include_relative content/busy-board/subcomponent-measured.md %}{% endcapture %}
   {% capture variables_recorded %}{% include_relative content/busy-board/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/busy-board/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/busy-board/languages.md %}{% endcapture %}
@@ -40,6 +41,7 @@ title: MAGIC Tasks
      task_description=task_description
      what_the_child_does=what_the_child_does
      information_collected=information_collected
+     subcomponent_measured=subcomponent_measured
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
@@ -51,6 +53,7 @@ title: MAGIC Tasks
   {% capture task_description %}{% include_relative content/scientific-reasoning/task-description.md %}{% endcapture %}
   {% capture what_the_child_does %}{% include_relative content/scientific-reasoning/what-the-child-does.md %}{% endcapture %}
   {% capture information_collected %}{% include_relative content/scientific-reasoning/information-collected.md %}{% endcapture %}
+  {% capture subcomponent_measured %}{% include_relative content/scientific-reasoning/subcomponent-measured.md %}{% endcapture %}
   {% capture variables_recorded %}{% include_relative content/scientific-reasoning/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/scientific-reasoning/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/scientific-reasoning/languages.md %}{% endcapture %}
@@ -60,6 +63,7 @@ title: MAGIC Tasks
      task_description=task_description
      what_the_child_does=what_the_child_does
      information_collected=information_collected
+     subcomponent_measured=subcomponent_measured
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
@@ -71,6 +75,7 @@ title: MAGIC Tasks
   {% capture task_description %}{% include_relative content/crafting/task-description.md %}{% endcapture %}
   {% capture what_the_child_does %}{% include_relative content/crafting/what-the-child-does.md %}{% endcapture %}
   {% capture information_collected %}{% include_relative content/crafting/information-collected.md %}{% endcapture %}
+  {% capture subcomponent_measured %}{% include_relative content/crafting/subcomponent-measured.md %}{% endcapture %}
   {% capture variables_recorded %}{% include_relative content/crafting/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/crafting/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/crafting/languages.md %}{% endcapture %}
@@ -80,6 +85,7 @@ title: MAGIC Tasks
      task_description=task_description
      what_the_child_does=what_the_child_does
      information_collected=information_collected
+     subcomponent_measured=subcomponent_measured
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
@@ -91,6 +97,7 @@ title: MAGIC Tasks
   {% capture task_description %}{% include_relative content/alternate-uses/task-description.md %}{% endcapture %}
   {% capture what_the_child_does %}{% include_relative content/alternate-uses/what-the-child-does.md %}{% endcapture %}
   {% capture information_collected %}{% include_relative content/alternate-uses/information-collected.md %}{% endcapture %}
+  {% capture subcomponent_measured %}{% include_relative content/alternate-uses/subcomponent-measured.md %}{% endcapture %}
   {% capture variables_recorded %}{% include_relative content/alternate-uses/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/alternate-uses/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/alternate-uses/languages.md %}{% endcapture %}
@@ -100,6 +107,7 @@ title: MAGIC Tasks
      task_description=task_description
      what_the_child_does=what_the_child_does
      information_collected=information_collected
+     subcomponent_measured=subcomponent_measured
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
