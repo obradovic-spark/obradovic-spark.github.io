@@ -56,6 +56,8 @@
 
     var isIntro = viewId === "intro";
 
+    document.body.setAttribute("data-active-task", isIntro ? "intro" : viewId);
+
     if (taskHeader) {
       taskHeader.hidden = isIntro;
     }
