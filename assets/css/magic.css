@@ -328,13 +328,13 @@ body {
 
 /* Intro hero */
 .intro-hero {
-  max-width: 40rem;
+  max-width: 52rem;
   text-align: center;
 }
 
 .magic-title--hero {
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(4.5rem, 14vw, 7.5rem);
+  letter-spacing: 0.05em;
 }
 
 .magic-title--hero .letter:hover {
@@ -342,20 +342,28 @@ body {
 }
 
 .magic-subtitle--hero {
-  margin-top: 1rem;
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  margin-top: 1.35rem;
+  font-size: clamp(1.2rem, 3.2vw, 1.65rem);
+  line-height: 1.55;
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.magic-subtitle--hero .word {
+  white-space: nowrap;
 }
 
 .intro-lead {
-  margin: 1.5rem auto 0;
-  max-width: 32rem;
-  font-size: 1.05rem;
+  margin: 1.75rem auto 0;
+  max-width: 36rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
 }
 
 .lab-link--hero {
   margin-top: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Task reports */
@@ -413,10 +421,15 @@ body {
   color: var(--task-accent);
 }
 
-.report-subheading:first-of-type {
+.report-subheading:first-of-type,
+.report-subheading--first {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
+}
+
+.report-block[data-section="task-coverage"] .report-subheading--first {
+  margin-top: 0.35rem;
 }
 
 .report-body > *:first-child {
@@ -436,6 +449,37 @@ body {
 .report-body ul,
 .report-body ol {
   padding-left: 1.25rem;
+}
+
+/* Inline highlight helpers (use inside content/*.md files) */
+.report-body hi,
+.report-body key,
+.report-body note {
+  display: inline;
+}
+
+.report-body hi {
+  font-weight: 700;
+  color: var(--task-accent-deep);
+}
+
+.report-body key {
+  font-weight: 600;
+  color: var(--task-accent-deep);
+  background: color-mix(in srgb, var(--task-accent) 18%, transparent);
+  padding: 0.05em 0.3em;
+  border-radius: 0.25rem;
+}
+
+.report-body note {
+  display: block;
+  margin: 0.85rem 0;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--text);
+  background: color-mix(in srgb, var(--task-accent) 12%, var(--surface));
+  border-left: 3px solid var(--task-accent);
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 /* Footer */
