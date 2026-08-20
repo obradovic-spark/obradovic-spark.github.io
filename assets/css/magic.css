@@ -224,7 +224,6 @@ body {
   border-left: 2px solid var(--border);
 }
 
-.task-nav-item:hover .task-section-menu,
 .task-nav-item.is-active .task-section-menu {
   display: block;
 }
