@@ -540,19 +540,15 @@ body[data-active-task="alternate-uses"] {
   margin-bottom: 0;
 }
 
-/* Inline highlight helpers (use inside content/*.md files) */
-.report-body hi,
-.report-body key,
-.report-body note {
-  display: inline;
-}
-
-.report-body hi {
+/* Inline highlight helpers (<hi>, <key>, <note> in content/*.md) */
+.report-body .hi,
+.report-inline-value .hi {
   font-weight: 700;
   color: var(--task-accent-deep);
 }
 
-.report-body key {
+.report-body .key,
+.report-inline-value .key {
   font-weight: 600;
   color: var(--task-accent-deep);
   background: color-mix(in srgb, var(--task-accent) 18%, transparent);
@@ -560,7 +556,8 @@ body[data-active-task="alternate-uses"] {
   border-radius: 0.25rem;
 }
 
-.report-body note {
+.report-body .note,
+.report-inline-value .note {
   display: block;
   margin: 0.85rem 0;
   padding: 0.75rem 1rem;
