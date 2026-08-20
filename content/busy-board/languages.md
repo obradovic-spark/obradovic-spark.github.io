@@ -1,1 +1,2 @@
-English and Spanish
+- English
+- Spanish
