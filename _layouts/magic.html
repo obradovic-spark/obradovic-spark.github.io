@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/magic.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar" aria-label="Site navigation">
+    <nav class="site-nav">
+      <button type="button" class="nav-btn intro-btn is-active" data-task="intro">
+        <span class="intro-btn-label" aria-hidden="true">
+          <span class="letter letter-m">M</span><span class="letter letter-a">A</span><span class="letter letter-g">G</span><span class="letter letter-i">I</span><span class="letter letter-c">C</span><span class="intro-btn-suffix"> | HOME</span>
+        </span>
+        <span class="sr-only">MAGIC: Intro</span>
+      </button>
+
+      <p class="nav-section-label">Tasks</p>
+      <ul class="task-list">
+        <li class="task-nav-item" data-task="busy-board">
+          <button type="button" class="nav-btn task-btn" data-task="busy-board" data-task-title="Busy board" aria-expanded="false" aria-haspopup="true">
+            Busy board
+          </button>
+          <ul class="task-section-menu" aria-label="Busy board sections">
+            <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="task-description">Task description</button></li>
+            <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="information-collected">Information collected</button></li>
+            <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="references">References</button></li>
+            <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="publications">Publications</button></li>
+          </ul>
+        </li>
+        <li class="task-nav-item" data-task="scientific-reasoning">
+          <button type="button" class="nav-btn task-btn" data-task="scientific-reasoning" data-task-title="Scientific reasoning" aria-expanded="false" aria-haspopup="true">
+            Scientific reasoning
+          </button>
+          <ul class="task-section-menu" aria-label="Scientific reasoning sections">
+            <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="task-description">Task description</button></li>
+            <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="information-collected">Information collected</button></li>
+            <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="references">References</button></li>
+            <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="publications">Publications</button></li>
+          </ul>
+        </li>
+        <li class="task-nav-item" data-task="crafting">
+          <button type="button" class="nav-btn task-btn" data-task="crafting" data-task-title="Crafting" aria-expanded="false" aria-haspopup="true">
+            Crafting
+          </button>
+          <ul class="task-section-menu" aria-label="Crafting sections">
+            <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="task-description">Task description</button></li>
+            <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="information-collected">Information collected</button></li>
+            <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="references">References</button></li>
+            <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="publications">Publications</button></li>
+          </ul>
+        </li>
+        <li class="task-nav-item" data-task="alternate-uses">
+          <button type="button" class="nav-btn task-btn" data-task="alternate-uses" data-task-title="Alternate uses" aria-expanded="false" aria-haspopup="true">
+            Alternate uses
+          </button>
+          <ul class="task-section-menu" aria-label="Alternate uses sections">
+            <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="task-description">Task description</button></li>
+            <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="information-collected">Information collected</button></li>
+            <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="references">References</button></li>
+            <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="publications">Publications</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="page">
+    <header class="task-header" id="task-header" hidden>
+      <h2 class="task-title" id="task-title">Busy board</h2>
+    </header>
+
+    <main class="content content--intro" id="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>MAGIC project tasks &middot; SPARK Lab &middot; Stanford University Graduate School of Education</p>
+    </footer>
+  </div>
+
+  <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
+</body>
+</html>
