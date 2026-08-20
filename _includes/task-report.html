@@ -4,7 +4,7 @@
 
     {% assign trailer_url = include.task_trailer | strip %}
     <div class="task-trailer">
-      <h3 class="report-subheading report-subheading--centered report-subheading--first-in-section">Task trailer</h3>
+      <h3 class="report-subheading report-subheading--centered">Task trailer</h3>
       <div class="video-embed">
         {% if trailer_url contains 'vimeo.com' %}
           {% assign vimeo_id = trailer_url | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | last %}
@@ -40,7 +40,7 @@
 
     <h3 class="report-subheading">What the child sees and does</h3>
     <div class="report-body">
-      {{ include.what_the_child_does | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.what_the_child_does %}
     </div>
   </section>
 
@@ -48,11 +48,11 @@
     <h2 class="report-heading">Task coverage</h2>
     <h3 class="report-subheading report-subheading--first">Ages</h3>
     <div class="report-body report-body--indexed">
-      {{ include.ages | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.ages %}
     </div>
     <h3 class="report-subheading">Languages</h3>
     <div class="report-body report-body--indexed">
-      {{ include.languages | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.languages %}
     </div>
   </section>
 
@@ -62,25 +62,25 @@
     <div class="report-inline-field">
       <h3 class="report-subheading report-subheading--inline">Subcomponent measured:</h3>
       <div class="report-inline-value">
-        {{ include.subcomponent_measured | markdownify }}
+        {% include _includes/helpers/tagged-markdown.html text=include.subcomponent_measured %}
       </div>
     </div>
 
     <h3 class="report-subheading">Variables stored</h3>
     <div class="report-body report-body--indexed">
-      {{ include.variables_recorded | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.variables_recorded %}
     </div>
 
     <h3 class="report-subheading">Performance metrics</h3>
     <div class="report-body report-body--indexed">
-      {{ include.performance_metrics | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.performance_metrics %}
     </div>
   </section>
 
   <section class="report-block" id="publications" data-section="publications">
     <h2 class="report-heading">Publications</h2>
     <div class="report-body">
-      {{ include.publications | markdownify }}
+      {% include _includes/helpers/tagged-markdown.html text=include.publications %}
     </div>
   </section>
 </article>
