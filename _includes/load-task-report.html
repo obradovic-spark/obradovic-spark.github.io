@@ -1,18 +1,19 @@
 {% comment %}
-Loads content/<task>/*.md and renders the shared task report.
+Loads _content/<task>/*.md and shared text, then renders the shared task report.
 Requires includes_dir: "." in _config.yml.
 {% endcomment %}
 {% assign task = include.task %}
 
-{% assign path_task_description = 'content/' | append: task | append: '/task-description.md' %}
-{% assign path_what_the_child_does = 'content/' | append: task | append: '/what-the-child-does.md' %}
-{% assign path_task_trailer = 'content/' | append: task | append: '/task-trailer.md' %}
-{% assign path_subcomponent_measured = 'content/' | append: task | append: '/subcomponent-measured.md' %}
-{% assign path_variables_recorded = 'content/' | append: task | append: '/variables-recorded.md' %}
-{% assign path_performance_metrics = 'content/' | append: task | append: '/performance-metrics.md' %}
-{% assign path_ages = 'content/' | append: task | append: '/ages.md' %}
-{% assign path_languages = 'content/' | append: task | append: '/languages.md' %}
-{% assign path_publications = 'content/' | append: task | append: '/publications.md' %}
+{% assign path_task_description = '_content/' | append: task | append: '/task-description.md' %}
+{% assign path_what_the_child_does = '_content/' | append: task | append: '/what-the-child-does.md' %}
+{% assign path_task_trailer = '_content/' | append: task | append: '/task-trailer.md' %}
+{% assign path_subcomponent_measured = '_content/' | append: task | append: '/subcomponent-measured.md' %}
+{% assign path_variables_recorded = '_content/' | append: task | append: '/variables-recorded.md' %}
+{% assign path_performance_metrics = '_content/' | append: task | append: '/performance-metrics.md' %}
+{% assign path_ages = '_content/' | append: task | append: '/ages.md' %}
+{% assign path_languages = '_content/' | append: task | append: '/languages.md' %}
+{% assign path_publications = '_content/' | append: task | append: '/publications.md' %}
+{% assign path_variables_intro = '_content/shared-text/variables-1.md' %}
 
 {% capture task_description %}{% include {{ path_task_description }} %}{% endcapture %}
 {% capture what_the_child_does %}{% include {{ path_what_the_child_does }} %}{% endcapture %}
@@ -23,6 +24,7 @@ Requires includes_dir: "." in _config.yml.
 {% capture ages %}{% include {{ path_ages }} %}{% endcapture %}
 {% capture languages %}{% include {{ path_languages }} %}{% endcapture %}
 {% capture publications %}{% include {{ path_publications }} %}{% endcapture %}
+{% capture variables_intro %}{% include {{ path_variables_intro }} %}{% endcapture %}
 
 {% include _includes/task-report.html
    task=task
@@ -30,6 +32,7 @@ Requires includes_dir: "." in _config.yml.
    what_the_child_does=what_the_child_does
    task_trailer=task_trailer
    subcomponent_measured=subcomponent_measured
+   variables_intro=variables_intro
    variables_recorded=variables_recorded
    performance_metrics=performance_metrics
    ages=ages

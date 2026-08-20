@@ -1,1 +1,0 @@
-3 to 10 years old

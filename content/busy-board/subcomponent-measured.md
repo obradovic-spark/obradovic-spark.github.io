@@ -1,1 +1,0 @@
-Curiosity and <b>Exploration</b>

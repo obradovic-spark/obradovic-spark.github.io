@@ -563,7 +563,7 @@ body[data-active-task="alternate-uses"] {
   margin-bottom: 0;
 }
 
-/* Inline highlight helpers (<hi>, <key>, <note> in content/*.md) */
+/* Inline highlight helpers (<hi>, <key>, <note> in _content/*.md) */
 .report-body .hi,
 .report-inline-value .hi {
   font-weight: 700;

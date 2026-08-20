@@ -4,11 +4,9 @@ theme: minima
 url: "https://obradovic-spark.github.io"
 baseurl: ""
 
-# Allow includes from both /content (task text) and /_includes (layout pieces)
 includes_dir: "."
 
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-  - content

@@ -30,6 +30,6 @@ After that, you will be able to access the local preview server by running the:
 bundle exec jekyll serve
 ```
 
-Then open [http://localhost:4000](http://localhost:4000) in your favorite internet browser. Jekyll rebuilds when you save files; refresh the page to see changes.
+Then open [http://localhost:4000](http://localhost:4000) in your favorite internet browser. Jekyll rebuilds when you save files (including markdown under `_content/`); refresh the page to see changes.
 
 To stop the server, press **Ctrl + C** in the terminal.

@@ -71,8 +71,19 @@
     </div>
 
     <h3 class="report-subheading">Variables stored</h3>
+    <div class="report-body">
+      {% include _includes/helpers/tagged-markdown.html text=include.variables_intro %}
+    </div>
     <div class="report-body report-body--indexed">
       {% include _includes/helpers/tagged-markdown.html text=include.variables_recorded %}
+    </div>
+    <div class="variables-sheet">
+      <a class="variables-sheet-btn"
+         href="{{ '/coming-soon/' | relative_url }}"
+         target="_blank"
+         rel="noopener noreferrer">
+        See the full list...
+      </a>
     </div>
 
     <h3 class="report-subheading">Performance metrics</h3>
