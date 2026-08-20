@@ -1,6 +1,3 @@
-{% comment %}
-Loads content/<task>/*.md and renders the shared task report.
-{% endcomment %}
 {% assign task = include.task %}
 
 {% assign path_what_the_child_does = 'content/' | append: task | append: '/what-the-child-does.md' %}
@@ -21,7 +18,7 @@ Loads content/<task>/*.md and renders the shared task report.
 {% capture languages %}{% include {{ path_languages }} %}{% endcapture %}
 {% capture publications %}{% include {{ path_publications }} %}{% endcapture %}
 
-{% include task-report.html
+{% include _includes/task-report.html
    task=task
    what_the_child_does=what_the_child_does
    task_trailer=task_trailer
