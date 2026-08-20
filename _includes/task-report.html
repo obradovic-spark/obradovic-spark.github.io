@@ -2,6 +2,10 @@
   <section class="report-block" id="task-description" data-section="task-description">
     <h2 class="report-heading">Task description</h2>
 
+    <div class="report-body report-body--ruled">
+      {% include _includes/helpers/tagged-markdown.html text=include.task_description %}
+    </div>
+
     {% assign trailer_url = include.task_trailer | strip %}
     <div class="task-trailer">
       <h3 class="report-subheading report-subheading--centered">Task trailer</h3>
