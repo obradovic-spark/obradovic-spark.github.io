@@ -1,0 +1,45 @@
+<article class="task-report">
+  <section class="report-block" data-section="task-description">
+    <h3 class="report-heading">Task description</h3>
+    <div class="report-body">
+      {{ include.task_description | markdownify }}
+    </div>
+    <h4 class="report-subheading">What the child sees and does</h4>
+    <div class="report-body">
+      {{ include.what_the_child_does | markdownify }}
+    </div>
+  </section>
+
+  <section class="report-block" data-section="information-collected">
+    <h3 class="report-heading">Information collected</h3>
+    <div class="report-body">
+      {{ include.information_collected | markdownify }}
+    </div>
+    <h4 class="report-subheading">Variables recorded</h4>
+    <div class="report-body">
+      {{ include.variables_recorded | markdownify }}
+    </div>
+    <h4 class="report-subheading">Ages</h4>
+    <div class="report-body">
+      {{ include.ages | markdownify }}
+    </div>
+    <h4 class="report-subheading">Languages</h4>
+    <div class="report-body">
+      {{ include.languages | markdownify }}
+    </div>
+  </section>
+
+  <section class="report-block" data-section="references">
+    <h3 class="report-heading">References</h3>
+    <div class="report-body">
+      {{ include.references | markdownify }}
+    </div>
+  </section>
+
+  <section class="report-block" data-section="publications">
+    <h3 class="report-heading">Publications</h3>
+    <div class="report-body">
+      {{ include.publications | markdownify }}
+    </div>
+  </section>
+</article>
