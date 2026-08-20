@@ -216,12 +216,20 @@ body[data-active-task="alternate-uses"] {
 }
 
 .nav-section-label {
-  margin: 0 0 0.75rem 0.75rem;
+  margin: 0 0.35rem 0.4rem;
+  padding: 0 0.4rem 0.45rem;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.task-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .task-list {
