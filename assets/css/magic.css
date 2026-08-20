@@ -429,7 +429,6 @@ body[data-active-task="alternate-uses"] {
   color: var(--task-accent);
 }
 
-.report-subheading:first-of-type:not(.report-subheading--inline),
 .report-subheading--first {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
@@ -481,8 +480,6 @@ body[data-active-task="alternate-uses"] {
 .report-subheading--centered {
   text-align: center;
   margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
 }
 
 .task-trailer {
@@ -497,7 +494,6 @@ body[data-active-task="alternate-uses"] {
   overflow: hidden;
   border-radius: var(--radius);
   background: #0f172a;
-  box-shadow: var(--shadow);
 }
 
 .video-embed iframe {
@@ -526,6 +522,12 @@ body[data-active-task="alternate-uses"] {
 
 .report-body {
   font-size: 1.08rem;
+}
+
+.report-body--ruled {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
 }
 
 .report-body > *:first-child {
