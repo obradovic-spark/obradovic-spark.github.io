@@ -1,6 +1,6 @@
 # Highlight tags for task content
 
-List of tags to use inside any file under `content/<task-name>/`. They work like HTML tags: they wrap the phrase you want to emphasize (i.e., they need to be open `<tag>` and closed `<\tag>`).
+Use these tags inside any file under `content/<task-name>/`. They work like HTML tags: wrap the phrase you want to emphasize.
 
 Colors automatically match the task currently being viewed (Busy board = pink, Scientific reasoning = orange, Crafting = yellow, Alternate uses = cyan).
 
@@ -20,7 +20,9 @@ The main outcome is <key>exploration quality</key>.
 <note>This task includes a knowledge test after exploration ends.</note>
 ```
 
+
 ## Notes
 
 - You can still use normal markdown (`**bold**`, lists, links).
 - Standard `<b>…</b>` stays plain bold and does **not** pick up the task color. Prefer `<hi>` when you want the accent color.
+- Put the tags in the `.md` files under `content/`; the site styles them automatically.
