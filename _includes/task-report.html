@@ -60,17 +60,23 @@
   </section>
 
   <section class="report-block" id="information-collected" data-section="information-collected">
-    <h2 class="report-heading">Information collected</h2>
-    <div class="report-body">
-      {{ include.information_collected | markdownify }}
+    <h2 class="report-heading">Information collected and data processing</h2>
+
+    <div class="report-inline-field">
+      <h3 class="report-subheading report-subheading--inline">Subcomponent measured:</h3>
+      <div class="report-inline-value">
+        {{ include.subcomponent_measured | markdownify }}
+      </div>
     </div>
-    <h3 class="report-subheading">Subcomponent measured</h3>
-    <div class="report-body">
-      {{ include.subcomponent_measured | markdownify }}
-    </div>
-    <h3 class="report-subheading">Variables recorded</h3>
-    <div class="report-body">
+
+    <h3 class="report-subheading">Variables stored</h3>
+    <div class="report-body report-body--indexed">
       {{ include.variables_recorded | markdownify }}
+    </div>
+
+    <h3 class="report-subheading">Performance metrics</h3>
+    <div class="report-body report-body--indexed">
+      {{ include.performance_metrics | markdownify }}
     </div>
   </section>
 
