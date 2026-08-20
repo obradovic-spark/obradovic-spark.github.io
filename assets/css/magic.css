@@ -430,8 +430,13 @@ body[data-active-task="alternate-uses"] {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.4rem 0.5rem;
-  margin-top: 0.35rem;
+  gap: 0.35rem 0.45rem;
+  margin: 0.15rem 0 0.25rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--task-accent-deep);
 }
 
 .report-subheading--inline {
@@ -439,12 +444,18 @@ body[data-active-task="alternate-uses"] {
   padding: 0;
   border: none;
   display: inline;
-  font-size: 1.35rem;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .report-inline-value {
-  font-size: 1.08rem;
-  color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #44403c;
 }
 
 .report-inline-value > *:first-child {
