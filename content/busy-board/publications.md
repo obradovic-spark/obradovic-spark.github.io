@@ -1,1 +1,1 @@
-SPARK lab publications using this task
+Obradović, J., Sulik, M. J., Ahmed, I., & Wulff, T. (2026). <i>Children’s curiosity-driven exploration and learning of causal connections: Variability and validity of the Busy Board task</i> [Manuscript submitted for publication]. Graduate School of Education, Stanford University.
