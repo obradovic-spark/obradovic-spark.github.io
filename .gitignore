@@ -5,3 +5,5 @@ _site/
 vendor/
 .bundle/
 .cursor/
+.DS_Store
+.Rhistory
