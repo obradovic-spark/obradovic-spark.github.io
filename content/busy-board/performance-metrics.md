@@ -1,1 +1,6 @@
-- Performance metrics derived from this task
+- Total Play Time: The total amount of time in seconds the child spends exploring the task. 
+- Engagement: Total number of interactions with all of the inputs.
+- Exploration: Proportion of the input the child explored based on the number of possible outputs for a single input. This is an average across all of the different input-output combinations. 
+- Depth: Number of outputs that were explored exhaustively (all options seen)
+- Breadth: Number of different inputs that were used at least once (ranging from 0 to 7)
+- Knowledge Test Accuracy: Proportion of correct answers on the knowledge test.
