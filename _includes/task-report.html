@@ -47,21 +47,6 @@
     </div>
   </section>
 
-  <section class="report-block" data-section="information-collected">
-    <h3 class="report-heading">Information collected</h3>
-    <div class="report-body">
-      {{ include.information_collected | markdownify }}
-    </div>
-    <h4 class="report-subheading">Subcomponent measured</h4>
-    <div class="report-body">
-      {{ include.subcomponent_measured | markdownify }}
-    </div>
-    <h4 class="report-subheading">Variables recorded</h4>
-    <div class="report-body">
-      {{ include.variables_recorded | markdownify }}
-    </div>
-  </section>
-
   <section class="report-block" data-section="task-coverage">
     <h3 class="report-heading">Task coverage</h3>
     <h4 class="report-subheading report-subheading--first">Ages</h4>
@@ -74,10 +59,18 @@
     </div>
   </section>
 
-  <section class="report-block" data-section="references">
-    <h3 class="report-heading">References</h3>
+  <section class="report-block" data-section="information-collected">
+    <h3 class="report-heading">Information collected</h3>
     <div class="report-body">
-      {{ include.references | markdownify }}
+      {{ include.information_collected | markdownify }}
+    </div>
+    <h4 class="report-subheading">Subcomponent measured</h4>
+    <div class="report-body">
+      {{ include.subcomponent_measured | markdownify }}
+    </div>
+    <h4 class="report-subheading">Variables recorded</h4>
+    <div class="report-body">
+      {{ include.variables_recorded | markdownify }}
     </div>
   </section>
 
