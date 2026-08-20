@@ -1,1 +1,1 @@
-Language(s) in which this task is available
+English and Spanish
