@@ -419,11 +419,42 @@ body[data-active-task="alternate-uses"] {
   color: var(--task-accent);
 }
 
-.report-subheading:first-of-type,
+.report-subheading:first-of-type:not(.report-subheading--inline),
 .report-subheading--first {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
+}
+
+.report-inline-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.report-subheading--inline {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: inline;
+  font-size: 1.35rem;
+}
+
+.report-inline-value {
+  font-size: 1.08rem;
+  color: var(--text);
+}
+
+.report-inline-value > *:first-child {
+  margin-top: 0;
+}
+
+.report-inline-value > *:last-child,
+.report-inline-value p {
+  display: inline;
+  margin: 0;
 }
 
 .report-subheading--centered {
