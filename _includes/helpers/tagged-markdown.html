@@ -1,0 +1,9 @@
+{% assign tagged = include.text
+  | replace: '<hi>', '<span class="hi">'
+  | replace: '</hi>', '</span>'
+  | replace: '<key>', '<span class="key">'
+  | replace: '</key>', '</span>'
+  | replace: '<note>', '<div class="note">'
+  | replace: '</note>', '</div>'
+%}
+{{ tagged | markdownify }}
