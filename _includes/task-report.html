@@ -1,13 +1,13 @@
-<article class="task-report">
-  <section class="report-block" data-section="task-description">
-    <h3 class="report-heading">Task description</h3>
+<article class="task-report" data-task="{{ include.task }}">
+  <section class="report-block" id="task-description" data-section="task-description">
+    <h2 class="report-heading">Task description</h2>
     <div class="report-body">
       {{ include.task_description | markdownify }}
     </div>
 
     {% assign trailer_url = include.task_trailer | strip %}
     <div class="task-trailer">
-      <h4 class="report-subheading report-subheading--centered">Task trailer</h4>
+      <h3 class="report-subheading report-subheading--centered">Task trailer</h3>
       <div class="video-embed">
         {% if trailer_url contains 'vimeo.com' %}
           {% assign vimeo_id = trailer_url | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | last %}
@@ -41,41 +41,41 @@
       </div>
     </div>
 
-    <h4 class="report-subheading">What the child sees and does</h4>
+    <h3 class="report-subheading">What the child sees and does</h3>
     <div class="report-body">
       {{ include.what_the_child_does | markdownify }}
     </div>
   </section>
 
-  <section class="report-block" data-section="task-coverage">
-    <h3 class="report-heading">Task coverage</h3>
-    <h4 class="report-subheading report-subheading--first">Ages</h4>
+  <section class="report-block" id="task-coverage" data-section="task-coverage">
+    <h2 class="report-heading">Task coverage</h2>
+    <h3 class="report-subheading report-subheading--first">Ages</h3>
     <div class="report-body">
       {{ include.ages | markdownify }}
     </div>
-    <h4 class="report-subheading">Languages</h4>
+    <h3 class="report-subheading">Languages</h3>
     <div class="report-body">
       {{ include.languages | markdownify }}
     </div>
   </section>
 
-  <section class="report-block" data-section="information-collected">
-    <h3 class="report-heading">Information collected</h3>
+  <section class="report-block" id="information-collected" data-section="information-collected">
+    <h2 class="report-heading">Information collected</h2>
     <div class="report-body">
       {{ include.information_collected | markdownify }}
     </div>
-    <h4 class="report-subheading">Subcomponent measured</h4>
+    <h3 class="report-subheading">Subcomponent measured</h3>
     <div class="report-body">
       {{ include.subcomponent_measured | markdownify }}
     </div>
-    <h4 class="report-subheading">Variables recorded</h4>
+    <h3 class="report-subheading">Variables recorded</h3>
     <div class="report-body">
       {{ include.variables_recorded | markdownify }}
     </div>
   </section>
 
-  <section class="report-block" data-section="publications">
-    <h3 class="report-heading">Publications</h3>
+  <section class="report-block" id="publications" data-section="publications">
+    <h2 class="report-heading">Publications</h2>
     <div class="report-body">
       {{ include.publications | markdownify }}
     </div>

@@ -1,0 +1,20 @@
+{% assign is_active = false %}
+{% if include.active_task == include.task %}
+  {% assign is_active = true %}
+{% endif %}
+{% assign task_path = '/' | append: include.task | append: '/' %}
+<li class="task-nav-item{% if is_active %} is-active{% endif %}" data-task="{{ include.task }}">
+  <a class="nav-btn task-btn{% if is_active %} is-active{% endif %}"
+     href="{{ task_path | relative_url }}"
+     {% if is_active %}aria-current="page"{% endif %}>
+    {{ include.title }}
+  </a>
+  {% if is_active %}
+  <ul class="task-section-menu" aria-label="{{ include.title }} sections">
+    <li><a class="section-link" href="{{ task_path | relative_url }}#task-description">Task description</a></li>
+    <li><a class="section-link" href="{{ task_path | relative_url }}#task-coverage">Task coverage</a></li>
+    <li><a class="section-link" href="{{ task_path | relative_url }}#information-collected">Information collected</a></li>
+    <li><a class="section-link" href="{{ task_path | relative_url }}#publications">Publications</a></li>
+  </ul>
+  {% endif %}
+</li>

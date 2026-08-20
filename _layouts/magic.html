@@ -10,74 +10,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
-<body>
+{% assign active_task = page.task | default: "intro" %}
+<body data-active-task="{{ active_task }}">
   <aside class="sidebar" aria-label="Site navigation">
     <nav class="site-nav">
-      <button type="button" class="nav-btn intro-btn is-active" data-task="intro">
+      <a class="nav-btn intro-btn{% if active_task == 'intro' %} is-active{% endif %}" href="{{ '/' | relative_url }}">
         <span class="intro-btn-label" aria-hidden="true">
           <span class="letter letter-m">M</span><span class="letter letter-a">A</span><span class="letter letter-g">G</span><span class="letter letter-i">I</span><span class="letter letter-c">C</span><span class="intro-btn-suffix"> | HOME</span>
         </span>
         <span class="sr-only">MAGIC: Intro</span>
-      </button>
+      </a>
 
       <div class="task-nav-group">
         <p class="nav-section-label">Tasks</p>
         <ul class="task-list">
-          <li class="task-nav-item" data-task="busy-board">
-            <button type="button" class="nav-btn task-btn" data-task="busy-board" data-task-title="Busy board" aria-expanded="false" aria-haspopup="true">
-              Busy board
-            </button>
-            <ul class="task-section-menu" aria-label="Busy board sections">
-              <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="task-description">Task description</button></li>
-              <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="task-coverage">Task coverage</button></li>
-              <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="information-collected">Information collected</button></li>
-              <li><button type="button" class="section-link" data-task="busy-board" data-task-title="Busy board" data-section="publications">Publications</button></li>
-            </ul>
-          </li>
-          <li class="task-nav-item" data-task="scientific-reasoning">
-            <button type="button" class="nav-btn task-btn" data-task="scientific-reasoning" data-task-title="Scientific reasoning" aria-expanded="false" aria-haspopup="true">
-              Scientific reasoning
-            </button>
-            <ul class="task-section-menu" aria-label="Scientific reasoning sections">
-              <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="task-description">Task description</button></li>
-              <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="task-coverage">Task coverage</button></li>
-              <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="information-collected">Information collected</button></li>
-              <li><button type="button" class="section-link" data-task="scientific-reasoning" data-task-title="Scientific reasoning" data-section="publications">Publications</button></li>
-            </ul>
-          </li>
-          <li class="task-nav-item" data-task="crafting">
-            <button type="button" class="nav-btn task-btn" data-task="crafting" data-task-title="Crafting" aria-expanded="false" aria-haspopup="true">
-              Crafting
-            </button>
-            <ul class="task-section-menu" aria-label="Crafting sections">
-              <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="task-description">Task description</button></li>
-              <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="task-coverage">Task coverage</button></li>
-              <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="information-collected">Information collected</button></li>
-              <li><button type="button" class="section-link" data-task="crafting" data-task-title="Crafting" data-section="publications">Publications</button></li>
-            </ul>
-          </li>
-          <li class="task-nav-item" data-task="alternate-uses">
-            <button type="button" class="nav-btn task-btn" data-task="alternate-uses" data-task-title="Alternate uses" aria-expanded="false" aria-haspopup="true">
-              Alternate uses
-            </button>
-            <ul class="task-section-menu" aria-label="Alternate uses sections">
-              <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="task-description">Task description</button></li>
-              <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="task-coverage">Task coverage</button></li>
-              <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="information-collected">Information collected</button></li>
-              <li><button type="button" class="section-link" data-task="alternate-uses" data-task-title="Alternate uses" data-section="publications">Publications</button></li>
-            </ul>
-          </li>
+          {% include _includes/task-nav-item.html
+             task="busy-board"
+             title="Busy board"
+             active_task=active_task %}
+          {% include _includes/task-nav-item.html
+             task="scientific-reasoning"
+             title="Scientific reasoning"
+             active_task=active_task %}
+          {% include _includes/task-nav-item.html
+             task="crafting"
+             title="Crafting"
+             active_task=active_task %}
+          {% include _includes/task-nav-item.html
+             task="alternate-uses"
+             title="Alternate uses"
+             active_task=active_task %}
         </ul>
       </div>
     </nav>
   </aside>
 
   <div class="page">
-    <header class="task-header" id="task-header" hidden>
-      <h2 class="task-title" id="task-title">Busy board</h2>
+    {% unless active_task == "intro" %}
+    <header class="task-header" id="task-header">
+      <h1 class="task-title">{{ page.title }}</h1>
     </header>
+    {% endunless %}
 
-    <main class="content content--intro" id="main-content">
+    <main class="content{% if active_task == 'intro' %} content--intro{% endif %}" id="main-content">
       {{ content }}
     </main>
 
