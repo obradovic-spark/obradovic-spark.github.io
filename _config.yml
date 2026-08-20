@@ -1,0 +1,9 @@
+title: MAGIC
+description: Assessment tasks from the Measuring Acquisition & Growth of Inquiry & Curiosity (MAGIC) project
+theme: minima
+url: "https://obradovic-spark.github.io"
+baseurl: ""
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
