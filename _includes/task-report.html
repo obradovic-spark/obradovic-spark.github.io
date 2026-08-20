@@ -4,6 +4,43 @@
     <div class="report-body">
       {{ include.task_description | markdownify }}
     </div>
+
+    {% assign trailer_url = include.task_trailer | strip %}
+    <div class="task-trailer">
+      <h4 class="report-subheading report-subheading--centered">Task trailer</h4>
+      <div class="video-embed">
+        {% if trailer_url contains 'vimeo.com' %}
+          {% assign vimeo_id = trailer_url | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | last %}
+          <iframe
+            src="https://player.vimeo.com/video/{{ vimeo_id }}"
+            title="Task trailer"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        {% elsif trailer_url contains 'youtu.be/' %}
+          {% assign youtube_id = trailer_url | split: 'youtu.be/' | last | split: '?' | first | split: '/' | first %}
+          <iframe
+            src="https://www.youtube.com/embed/{{ youtube_id }}"
+            title="Task trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        {% elsif trailer_url contains 'youtube.com' %}
+          {% assign youtube_id = trailer_url | split: 'v=' | last | split: '&' | first %}
+          <iframe
+            src="https://www.youtube.com/embed/{{ youtube_id }}"
+            title="Task trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        {% elsif trailer_url != '' %}
+          <p class="video-fallback">
+            <a href="{{ trailer_url }}" target="_blank" rel="noopener noreferrer">Watch the task trailer</a>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
     <h4 class="report-subheading">What the child sees and does</h4>
     <div class="report-body">
       {{ include.what_the_child_does | markdownify }}
