@@ -1,5 +1,10 @@
+{% comment %}
+Loads content/<task>/*.md and renders the shared task report.
+Requires includes_dir: "." in _config.yml.
+{% endcomment %}
 {% assign task = include.task %}
 
+{% assign path_task_description = 'content/' | append: task | append: '/task-description.md' %}
 {% assign path_what_the_child_does = 'content/' | append: task | append: '/what-the-child-does.md' %}
 {% assign path_task_trailer = 'content/' | append: task | append: '/task-trailer.md' %}
 {% assign path_subcomponent_measured = 'content/' | append: task | append: '/subcomponent-measured.md' %}
@@ -9,6 +14,7 @@
 {% assign path_languages = 'content/' | append: task | append: '/languages.md' %}
 {% assign path_publications = 'content/' | append: task | append: '/publications.md' %}
 
+{% capture task_description %}{% include {{ path_task_description }} %}{% endcapture %}
 {% capture what_the_child_does %}{% include {{ path_what_the_child_does }} %}{% endcapture %}
 {% capture task_trailer %}{% include {{ path_task_trailer }} %}{% endcapture %}
 {% capture subcomponent_measured %}{% include {{ path_subcomponent_measured }} %}{% endcapture %}
@@ -20,6 +26,7 @@
 
 {% include _includes/task-report.html
    task=task
+   task_description=task_description
    what_the_child_does=what_the_child_does
    task_trailer=task_trailer
    subcomponent_measured=subcomponent_measured
