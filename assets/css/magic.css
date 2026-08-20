@@ -585,6 +585,7 @@ body[data-active-task="alternate-uses"] {
   font-size: 0.85rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+  text-align: center;
 }
 
 .site-footer p {
