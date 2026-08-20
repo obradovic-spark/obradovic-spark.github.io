@@ -36,7 +36,6 @@ title: MAGIC Tasks
   {% capture variables_recorded %}{% include_relative content/busy-board/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/busy-board/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/busy-board/languages.md %}{% endcapture %}
-  {% capture references %}{% include_relative content/busy-board/references.md %}{% endcapture %}
   {% capture publications %}{% include_relative content/busy-board/publications.md %}{% endcapture %}
   {% include task-report.html
      task_description=task_description
@@ -47,7 +46,6 @@ title: MAGIC Tasks
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
-     references=references
      publications=publications %}
 </section>
 
@@ -60,7 +58,6 @@ title: MAGIC Tasks
   {% capture variables_recorded %}{% include_relative content/scientific-reasoning/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/scientific-reasoning/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/scientific-reasoning/languages.md %}{% endcapture %}
-  {% capture references %}{% include_relative content/scientific-reasoning/references.md %}{% endcapture %}
   {% capture publications %}{% include_relative content/scientific-reasoning/publications.md %}{% endcapture %}
   {% include task-report.html
      task_description=task_description
@@ -71,7 +68,6 @@ title: MAGIC Tasks
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
-     references=references
      publications=publications %}
 </section>
 
@@ -84,7 +80,6 @@ title: MAGIC Tasks
   {% capture variables_recorded %}{% include_relative content/crafting/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/crafting/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/crafting/languages.md %}{% endcapture %}
-  {% capture references %}{% include_relative content/crafting/references.md %}{% endcapture %}
   {% capture publications %}{% include_relative content/crafting/publications.md %}{% endcapture %}
   {% include task-report.html
      task_description=task_description
@@ -95,7 +90,6 @@ title: MAGIC Tasks
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
-     references=references
      publications=publications %}
 </section>
 
@@ -108,7 +102,6 @@ title: MAGIC Tasks
   {% capture variables_recorded %}{% include_relative content/alternate-uses/variables-recorded.md %}{% endcapture %}
   {% capture ages %}{% include_relative content/alternate-uses/ages.md %}{% endcapture %}
   {% capture languages %}{% include_relative content/alternate-uses/languages.md %}{% endcapture %}
-  {% capture references %}{% include_relative content/alternate-uses/references.md %}{% endcapture %}
   {% capture publications %}{% include_relative content/alternate-uses/publications.md %}{% endcapture %}
   {% include task-report.html
      task_description=task_description
@@ -119,6 +112,5 @@ title: MAGIC Tasks
      variables_recorded=variables_recorded
      ages=ages
      languages=languages
-     references=references
      publications=publications %}
 </section>
