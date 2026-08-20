@@ -11,12 +11,16 @@
   /* Task nav accents (separate palette) */
   --task-busy-board: #ec4899;
   --task-busy-board-deep: #be185d;
+  --task-busy-board-bg: #fdf5f9;
   --task-scientific-reasoning: #f97316;
   --task-scientific-reasoning-deep: #c2410c;
+  --task-scientific-reasoning-bg: #fdf7f2;
   --task-crafting: #eab308;
   --task-crafting-deep: #a16207;
+  --task-crafting-bg: #fdfaf0;
   --task-alternate-uses: #06b6d4;
   --task-alternate-uses-deep: #0e7490;
+  --task-alternate-uses-bg: #f2fafc;
 
   --sidebar-width: 16.5rem;
   --bg: #f8f7f4;
@@ -46,6 +50,23 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  transition: background-color 0.25s ease;
+}
+
+body[data-active-task="busy-board"] {
+  background: var(--task-busy-board-bg);
+}
+
+body[data-active-task="scientific-reasoning"] {
+  background: var(--task-scientific-reasoning-bg);
+}
+
+body[data-active-task="crafting"] {
+  background: var(--task-crafting-bg);
+}
+
+body[data-active-task="alternate-uses"] {
+  background: var(--task-alternate-uses-bg);
 }
 
 .sr-only {
@@ -272,7 +293,8 @@ body {
 .task-header {
   padding: 2.5rem 2.5rem 1.5rem;
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(4px);
 }
 
 .task-header[hidden] {
@@ -425,6 +447,48 @@ body {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
+}
+
+.report-subheading--centered {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.task-trailer {
+  margin: 0 0 0.25rem;
+}
+
+.video-embed {
+  position: relative;
+  width: min(100%, 40rem);
+  margin: 0.85rem auto 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #0f172a;
+  box-shadow: var(--shadow);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-fallback {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.video-fallback a {
+  color: #fff;
+  font-weight: 600;
 }
 
 .report-block[data-section="task-coverage"] .report-subheading--first {
