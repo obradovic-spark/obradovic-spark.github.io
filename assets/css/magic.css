@@ -591,29 +591,44 @@ body[data-active-task="alternate-uses"] {
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
-.variables-sheet {
+.info-section-links {
   display: flex;
-  justify-content: flex-start;
-  margin: 1.15rem 0 0.35rem;
-  padding-left: 2.5rem;
-}
-
-.variables-sheet-btn {
-  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 1rem 1.25rem;
+  margin: 1.75rem 0 0.35rem;
+}
+
+.variables-sheet-btn,
+.pipeline-link-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
   padding: 0.9rem 1.75rem;
-  border: 2px solid color-mix(in srgb, var(--task-accent) 45%, var(--border));
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--task-accent) 12%, var(--surface));
-  color: color-mix(in srgb, var(--task-accent-deep) 55%, var(--text-muted));
   font-family: inherit;
   font-size: 1.1rem;
   font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
   text-decoration: none;
-  opacity: 0.72;
   cursor: pointer;
   transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.variables-sheet-btn {
+  border: 2px solid color-mix(in srgb, var(--task-accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--task-accent) 12%, var(--surface));
+  color: color-mix(in srgb, var(--task-accent-deep) 55%, var(--text-muted));
+  opacity: 0.72;
+}
+
+.variables-sheet-btn-line,
+.pipeline-link-btn-line {
+  display: block;
 }
 
 .variables-sheet-btn:hover {
@@ -621,6 +636,20 @@ body[data-active-task="alternate-uses"] {
   background: color-mix(in srgb, var(--task-accent) 18%, var(--surface));
   border-color: var(--task-accent);
   color: var(--task-accent-deep);
+}
+
+.pipeline-link-btn {
+  border: 2px solid #78716c;
+  background: color-mix(in srgb, #44403c 10%, var(--surface));
+  color: #44403c;
+  opacity: 0.85;
+}
+
+.pipeline-link-btn:hover {
+  opacity: 1;
+  background: color-mix(in srgb, #44403c 16%, var(--surface));
+  border-color: #292524;
+  color: #1c1917;
 }
 
 .placeholder-page {
