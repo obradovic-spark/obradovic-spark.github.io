@@ -20,11 +20,14 @@ Text shared across every task lives in **`_content/shared-text/`**:
 
 - `variables-1.md` — intro above each task’s variables list (and above the “See the full list...” button)
 
-## Full variable list
+## Full variable list / data pipeline
 
-The “See the full list...” button opens `/coming-soon/` in a new tab for now (colored MAGIC title only, no sidebar).
+At the end of **Information collected and data processing**, two side-by-side links open `/coming-soon/` in a new tab for now:
 
-When the Google Drive docs are ready, change the `href` in `_includes/task-report.html` to the Drive URL (keep `target="_blank"`). Use a different URL per task via `include.task` if needed.
+- **See full list of Variables stored** (task accent color; two lines)
+- **Data processing pipeline** (darker gray)
+
+When the real destinations are ready, change the `href`s in `_includes/task-report.html` (keep `target="_blank"`).
 
 ## Task trailer video link
 

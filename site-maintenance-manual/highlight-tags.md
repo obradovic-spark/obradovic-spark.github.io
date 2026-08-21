@@ -9,7 +9,7 @@ Use these tags inside any file under `_content/<task-name>/`. They work like HTM
 | `<key>…</key>` | Soft tinted background plus task-colored text | `Measures <key>self-directed exploration</key>` |
 | `<note>…</note>` | Callout block with a colored left border | `<note>Available in English and Spanish.</note>` |
 
-Task accent colors: Busy board = pink, Scientific reasoning = orange, Crafting = yellow, Alternate uses = cyan.
+Task accent colors: Busy board = pink, Scientific reasoning = orange, Crafting = yellow, Alternative solutions = cyan, Problem solving = green, Same-different selection = purple, Explore and learn = red, Memory game = blue, Challenge preference = teal.
 
 ## Quick examples
 
