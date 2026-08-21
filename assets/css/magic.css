@@ -18,11 +18,26 @@
   --task-crafting: #eab308;
   --task-crafting-deep: #a16207;
   --task-crafting-bg: #fdfaf0;
-  --task-alternate-uses: #06b6d4;
-  --task-alternate-uses-deep: #0e7490;
-  --task-alternate-uses-bg: #f2fafc;
+  --task-alternative-solutions: #06b6d4;
+  --task-alternative-solutions-deep: #0e7490;
+  --task-alternative-solutions-bg: #f2fafc;
+  --task-problem-solving: #16a34a;
+  --task-problem-solving-deep: #166534;
+  --task-problem-solving-bg: #f3faf5;
+  --task-same-different-selection: #7c3aed;
+  --task-same-different-selection-deep: #5b21b6;
+  --task-same-different-selection-bg: #f7f4fd;
+  --task-explore-and-learn: #dc2626;
+  --task-explore-and-learn-deep: #991b1b;
+  --task-explore-and-learn-bg: #fdf4f4;
+  --task-memory-game: #2563eb;
+  --task-memory-game-deep: #1e40af;
+  --task-memory-game-bg: #f3f6fd;
+  --task-challenge-preference: #0d9488;
+  --task-challenge-preference-deep: #115e59;
+  --task-challenge-preference-bg: #f2faf9;
 
-  --sidebar-width: 16.5rem;
+  --sidebar-width: 18rem;
   --bg: #f8f7f4;
   --surface: #ffffff;
   --text: #1c1917;
@@ -71,10 +86,40 @@ body[data-active-task="crafting"] {
   --task-accent-deep: var(--task-crafting-deep);
 }
 
-body[data-active-task="alternate-uses"] {
-  background: var(--task-alternate-uses-bg);
-  --task-accent: var(--task-alternate-uses);
-  --task-accent-deep: var(--task-alternate-uses-deep);
+body[data-active-task="alternative-solutions"] {
+  background: var(--task-alternative-solutions-bg);
+  --task-accent: var(--task-alternative-solutions);
+  --task-accent-deep: var(--task-alternative-solutions-deep);
+}
+
+body[data-active-task="problem-solving"] {
+  background: var(--task-problem-solving-bg);
+  --task-accent: var(--task-problem-solving);
+  --task-accent-deep: var(--task-problem-solving-deep);
+}
+
+body[data-active-task="same-different-selection"] {
+  background: var(--task-same-different-selection-bg);
+  --task-accent: var(--task-same-different-selection);
+  --task-accent-deep: var(--task-same-different-selection-deep);
+}
+
+body[data-active-task="explore-and-learn"] {
+  background: var(--task-explore-and-learn-bg);
+  --task-accent: var(--task-explore-and-learn);
+  --task-accent-deep: var(--task-explore-and-learn-deep);
+}
+
+body[data-active-task="memory-game"] {
+  background: var(--task-memory-game-bg);
+  --task-accent: var(--task-memory-game);
+  --task-accent-deep: var(--task-memory-game-deep);
+}
+
+body[data-active-task="challenge-preference"] {
+  background: var(--task-challenge-preference-bg);
+  --task-accent: var(--task-challenge-preference);
+  --task-accent-deep: var(--task-challenge-preference-deep);
 }
 
 .sr-only {
@@ -269,7 +314,12 @@ body[data-active-task="alternate-uses"] {
 .task-nav-item[data-task="busy-board"] .task-section-menu { border-left-color: var(--task-busy-board); }
 .task-nav-item[data-task="scientific-reasoning"] .task-section-menu { border-left-color: var(--task-scientific-reasoning); }
 .task-nav-item[data-task="crafting"] .task-section-menu { border-left-color: var(--task-crafting); }
-.task-nav-item[data-task="alternate-uses"] .task-section-menu { border-left-color: var(--task-alternate-uses); }
+.task-nav-item[data-task="alternative-solutions"] .task-section-menu { border-left-color: var(--task-alternative-solutions); }
+.task-nav-item[data-task="problem-solving"] .task-section-menu { border-left-color: var(--task-problem-solving); }
+.task-nav-item[data-task="same-different-selection"] .task-section-menu { border-left-color: var(--task-same-different-selection); }
+.task-nav-item[data-task="explore-and-learn"] .task-section-menu { border-left-color: var(--task-explore-and-learn); }
+.task-nav-item[data-task="memory-game"] .task-section-menu { border-left-color: var(--task-memory-game); }
+.task-nav-item[data-task="challenge-preference"] .task-section-menu { border-left-color: var(--task-challenge-preference); }
 
 .section-link {
   display: block;
@@ -297,7 +347,12 @@ body[data-active-task="alternate-uses"] {
 .task-nav-item[data-task="busy-board"] .section-link.is-active { color: var(--task-busy-board); }
 .task-nav-item[data-task="scientific-reasoning"] .section-link.is-active { color: var(--task-scientific-reasoning); }
 .task-nav-item[data-task="crafting"] .section-link.is-active { color: var(--task-crafting); }
-.task-nav-item[data-task="alternate-uses"] .section-link.is-active { color: var(--task-alternate-uses); }
+.task-nav-item[data-task="alternative-solutions"] .section-link.is-active { color: var(--task-alternative-solutions); }
+.task-nav-item[data-task="problem-solving"] .section-link.is-active { color: var(--task-problem-solving); }
+.task-nav-item[data-task="same-different-selection"] .section-link.is-active { color: var(--task-same-different-selection); }
+.task-nav-item[data-task="explore-and-learn"] .section-link.is-active { color: var(--task-explore-and-learn); }
+.task-nav-item[data-task="memory-game"] .section-link.is-active { color: var(--task-memory-game); }
+.task-nav-item[data-task="challenge-preference"] .section-link.is-active { color: var(--task-challenge-preference); }
 
 .task-btn.is-active {
   border: 2px solid var(--border);
@@ -307,7 +362,12 @@ body[data-active-task="alternate-uses"] {
 .task-nav-item[data-task="busy-board"] .task-btn.is-active { border-color: var(--task-busy-board); }
 .task-nav-item[data-task="scientific-reasoning"] .task-btn.is-active { border-color: var(--task-scientific-reasoning); }
 .task-nav-item[data-task="crafting"] .task-btn.is-active { border-color: var(--task-crafting); }
-.task-nav-item[data-task="alternate-uses"] .task-btn.is-active { border-color: var(--task-alternate-uses); }
+.task-nav-item[data-task="alternative-solutions"] .task-btn.is-active { border-color: var(--task-alternative-solutions); }
+.task-nav-item[data-task="problem-solving"] .task-btn.is-active { border-color: var(--task-problem-solving); }
+.task-nav-item[data-task="same-different-selection"] .task-btn.is-active { border-color: var(--task-same-different-selection); }
+.task-nav-item[data-task="explore-and-learn"] .task-btn.is-active { border-color: var(--task-explore-and-learn); }
+.task-nav-item[data-task="memory-game"] .task-btn.is-active { border-color: var(--task-memory-game); }
+.task-nav-item[data-task="challenge-preference"] .task-btn.is-active { border-color: var(--task-challenge-preference); }
 
 /* Main page area */
 .page {
@@ -781,7 +841,12 @@ body[data-active-task="alternate-uses"] {
   .task-nav-item[data-task="busy-board"] .task-btn.is-active { color: var(--task-busy-board); border-color: var(--task-busy-board); }
   .task-nav-item[data-task="scientific-reasoning"] .task-btn.is-active { color: var(--task-scientific-reasoning); border-color: var(--task-scientific-reasoning); }
   .task-nav-item[data-task="crafting"] .task-btn.is-active { color: var(--task-crafting); border-color: var(--task-crafting); }
-  .task-nav-item[data-task="alternate-uses"] .task-btn.is-active { color: var(--task-alternate-uses); border-color: var(--task-alternate-uses); }
+  .task-nav-item[data-task="alternative-solutions"] .task-btn.is-active { color: var(--task-alternative-solutions); border-color: var(--task-alternative-solutions); }
+  .task-nav-item[data-task="problem-solving"] .task-btn.is-active { color: var(--task-problem-solving); border-color: var(--task-problem-solving); }
+  .task-nav-item[data-task="same-different-selection"] .task-btn.is-active { color: var(--task-same-different-selection); border-color: var(--task-same-different-selection); }
+  .task-nav-item[data-task="explore-and-learn"] .task-btn.is-active { color: var(--task-explore-and-learn); border-color: var(--task-explore-and-learn); }
+  .task-nav-item[data-task="memory-game"] .task-btn.is-active { color: var(--task-memory-game); border-color: var(--task-memory-game); }
+  .task-nav-item[data-task="challenge-preference"] .task-btn.is-active { color: var(--task-challenge-preference); border-color: var(--task-challenge-preference); }
 
   .page {
     margin-left: 0;
