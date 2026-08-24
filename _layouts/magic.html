@@ -68,7 +68,14 @@
   <div class="page">
     {% unless active_task == "intro" %}
     <header class="task-header" id="task-header">
+      {% if page.variables_full %}
+      <h1 class="task-title task-title--variables-full">
+        <span class="task-title-line task-title-line--muted">Full list of variables stored</span>
+        <span class="task-title-line task-title-line--task">{{ page.task_display_name }}</span>
+      </h1>
+      {% else %}
       <h1 class="task-title">{{ page.title }}</h1>
+      {% endif %}
     </header>
     {% endunless %}
 
