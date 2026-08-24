@@ -1,1 +1,1 @@
-Description of what the child sees and is asked to do to complete this task.
+Children are <hi>instructed to play and explore</hi> by touching different things to figure out how the game works. They are told that <b>when they are done playing they can exit the game</b> by pressing the `X` button on the top right corner of the screen. Below we show the layout of our Busy Board task for <i>Form A</i> (top column) and <i>Form B</i> (bottom row), with an example of how the layout looks by <i>default</i> (first column) versus when <i>inputs are activated</i> (second column).
