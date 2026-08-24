@@ -389,6 +389,25 @@ body[data-active-task="challenge-preference"] {
   color: var(--task-accent, var(--text));
 }
 
+.task-title--variables-full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.task-title-line {
+  display: block;
+  font-weight: 700;
+}
+
+.task-title-line--muted {
+  color: #44403c;
+}
+
+.task-title-line--task {
+  color: var(--task-accent, var(--text));
+}
+
 /* Content */
 .content {
   flex: 1;
@@ -512,6 +531,7 @@ body[data-active-task="challenge-preference"] {
   font-size: 1.02rem;
   font-weight: 500;
   color: #44403c;
+  text-align: justify;
 }
 
 .report-inline-value > *:first-child {
@@ -527,6 +547,7 @@ body[data-active-task="challenge-preference"] {
 .report-subheading--centered {
   text-align: center;
   margin-top: 1.75rem;
+  font-size: 1.7rem;
 }
 
 .task-trailer {
@@ -569,12 +590,80 @@ body[data-active-task="challenge-preference"] {
 
 .report-body {
   font-size: 1.08rem;
+  text-align: justify;
 }
 
 .report-body--ruled {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
+}
+
+.report-body--after-trailer {
+  margin-top: 1.25rem;
+}
+
+/* Task display illustrations (from set-display.md) */
+.set-display-slot {
+  margin-top: 1.5rem;
+}
+
+.set-display--matrix {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.set-display-matrix {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, auto) 1fr 1fr;
+  gap: 0.65rem 0.85rem;
+  align-items: center;
+}
+
+.set-display-matrix__corner {
+  min-height: 1rem;
+}
+
+.set-display-matrix__col-label,
+.set-display-matrix__row-label {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--task-accent-deep, var(--text));
+  line-height: 1.25;
+}
+
+.set-display-matrix__col-label {
+  text-align: center;
+}
+
+.set-display-matrix__row-label {
+  text-align: right;
+  padding-right: 0.25rem;
+}
+
+.set-display-matrix__cell {
+  margin: 0;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 0.15rem);
+  box-shadow: var(--shadow);
+}
+
+.set-display-matrix__cell img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+.set-display-slot > p {
+  margin: 0;
+  text-align: justify;
+  font-size: 1.08rem;
+  color: var(--text-muted);
 }
 
 .report-body > *:first-child {
@@ -610,7 +699,7 @@ body[data-active-task="challenge-preference"] {
   margin-bottom: 0;
 }
 
-/* Inline highlight helpers (<hi>, <key>, <note> in _content/*.md) */
+/* Inline highlight helpers (<hi>, <key>, <tt>, <note> in _content/*.md) */
 .report-body .hi,
 .report-inline-value .hi {
   font-weight: 700;
@@ -626,6 +715,18 @@ body[data-active-task="challenge-preference"] {
   border-radius: 0.25rem;
 }
 
+.report-body .tt,
+.report-inline-value .tt {
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-size: 0.92em;
+  font-weight: 500;
+  color: #292524;
+  background: color-mix(in srgb, var(--border) 70%, var(--surface));
+  padding: 0.12em 0.35em;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
 .report-body .note,
 .report-inline-value .note {
   display: block;
@@ -638,6 +739,86 @@ body[data-active-task="challenge-preference"] {
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
+.vertical-gap-1 {
+  height: 1.1rem;
+}
+
+.report-body table {
+  width: 90%;
+  margin: 0.35rem auto 0.85rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.02rem;
+  text-align: left;
+  border: 1.5px solid var(--task-accent, var(--border));
+  border-radius: 0.55rem;
+  overflow: hidden;
+}
+
+.report-body th,
+.report-body td {
+  padding: 0.65rem 0.85rem;
+  vertical-align: middle;
+  border-right: 1.5px solid var(--task-accent, var(--border));
+  border-bottom: 1.5px solid var(--task-accent, var(--border));
+}
+
+.report-body th:last-child,
+.report-body td:last-child {
+  border-right: none;
+}
+
+.report-body tr:last-child th,
+.report-body tr:last-child td {
+  border-bottom: none;
+}
+
+.report-body th {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--task-accent-deep, var(--text));
+  background: color-mix(in srgb, var(--task-accent) 8%, var(--surface));
+}
+
+.report-body th:first-child,
+.report-body td:first-child {
+  width: 22%;
+  white-space: normal;
+}
+
+.report-body td:first-child .tt {
+  display: inline-block;
+  margin: 0.12rem 0;
+}
+
+.report-body th:nth-child(2),
+.report-body td:nth-child(2) {
+  width: 48%;
+}
+
+.report-body th:last-child,
+.report-body td:last-child {
+  width: 30%;
+}
+
+.variables-full-back {
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+}
+
+.variables-full-back a {
+  font-weight: 500;
+  color: var(--task-accent-deep, var(--color-a));
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.variables-full-back a:hover {
+  border-bottom-color: var(--task-accent-deep, var(--color-a));
+}
+
 .info-section-links {
   display: flex;
   flex-wrap: wrap;
@@ -647,10 +828,15 @@ body[data-active-task="challenge-preference"] {
   margin: 1.75rem 0 0.35rem;
 }
 
+.variables-full-link {
+  display: flex;
+  justify-content: center;
+  margin: 1.35rem 0 0.5rem;
+}
+
 .variables-sheet-btn,
 .pipeline-link-btn {
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.15rem;
@@ -663,14 +849,42 @@ body[data-active-task="challenge-preference"] {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .variables-sheet-btn {
-  border: 2px solid color-mix(in srgb, var(--task-accent) 45%, var(--border));
-  background: color-mix(in srgb, var(--task-accent) 12%, var(--surface));
-  color: color-mix(in srgb, var(--task-accent-deep) 55%, var(--text-muted));
-  opacity: 0.72;
+  flex-direction: row;
+  gap: 1rem;
+  min-width: min(100%, 22rem);
+  padding: 1rem 1.5rem 1rem 1.15rem;
+  border: 2px solid color-mix(in srgb, var(--task-accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--task-accent) 14%, var(--surface));
+  color: var(--task-accent-deep);
+  opacity: 1;
+  box-shadow: var(--shadow);
+}
+
+.variables-sheet-btn-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.75rem;
+  line-height: 1;
+  color: var(--task-accent-deep);
+  transform: rotate(-12deg);
+}
+
+.variables-sheet-btn-icon svg {
+  display: block;
+}
+
+.variables-sheet-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  text-align: left;
 }
 
 .variables-sheet-btn-line,
@@ -679,13 +893,21 @@ body[data-active-task="challenge-preference"] {
 }
 
 .variables-sheet-btn:hover {
-  opacity: 0.92;
-  background: color-mix(in srgb, var(--task-accent) 18%, var(--surface));
+  opacity: 1;
+  background: color-mix(in srgb, var(--task-accent) 22%, var(--surface));
   border-color: var(--task-accent);
   color: var(--task-accent-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.12);
+}
+
+.variables-sheet-btn:hover .variables-sheet-btn-icon {
+  color: var(--task-accent);
 }
 
 .pipeline-link-btn {
+  flex-direction: column;
+  gap: 0.15rem;
   border: 2px solid #78716c;
   background: color-mix(in srgb, #44403c 10%, var(--surface));
   color: #44403c;
