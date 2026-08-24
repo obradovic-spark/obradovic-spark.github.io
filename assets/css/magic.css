@@ -149,15 +149,6 @@ body[data-active-task="challenge-preference"] {
   letter-spacing: 0.03em;
 }
 
-.magic-title .letter {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.magic-title .letter:hover {
-  transform: translateY(-2px) scale(1.05);
-}
-
 .magic-subtitle {
   margin: 0;
   color: var(--text-muted);
@@ -423,10 +414,6 @@ body[data-active-task="challenge-preference"] {
 .magic-title--hero {
   font-size: clamp(4.5rem, 14vw, 7.5rem);
   letter-spacing: 0.05em;
-}
-
-.magic-title--hero .letter:hover {
-  transform: translateY(-4px) scale(1.05);
 }
 
 .magic-subtitle--hero {
