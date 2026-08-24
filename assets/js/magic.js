@@ -19,23 +19,43 @@
   window.addEventListener("hashchange", setActiveFromHash);
   setActiveFromHash();
 
+  function normalizePath(path) {
+    if (!path) return "/";
+    return path.replace(/\/index\.html$/i, "").replace(/\/$/, "") || "/";
+  }
+
+  function setMenuOpen(item, toggle, menu, willOpen) {
+    item.classList.toggle("is-open", willOpen);
+    toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    if (willOpen) {
+      menu.removeAttribute("hidden");
+    } else {
+      menu.setAttribute("hidden", "");
+    }
+  }
+
   document.querySelectorAll(".task-nav-item").forEach(function (item) {
     var toggle = item.querySelector(".task-nav-toggle");
     var menu = item.querySelector(".task-section-menu");
-    if (!toggle || !menu) return;
+    var taskLink = item.querySelector(".task-btn");
+    if (!toggle || !menu || !taskLink) return;
+
+    function toggleMenu() {
+      setMenuOpen(item, toggle, menu, !item.classList.contains("is-open"));
+    }
 
     toggle.addEventListener("click", function (event) {
       event.preventDefault();
       event.stopPropagation();
+      toggleMenu();
+    });
 
-      var willOpen = !item.classList.contains("is-open");
-      item.classList.toggle("is-open", willOpen);
-      toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
-
-      if (willOpen) {
-        menu.removeAttribute("hidden");
-      } else {
-        menu.setAttribute("hidden", "");
+    taskLink.addEventListener("click", function (event) {
+      var currentPath = normalizePath(window.location.pathname);
+      var targetPath = normalizePath(taskLink.pathname);
+      if (currentPath === targetPath) {
+        event.preventDefault();
+        toggleMenu();
       }
     });
   });
