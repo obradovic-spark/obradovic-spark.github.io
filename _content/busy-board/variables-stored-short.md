@@ -1,0 +1,4 @@
+- Child ID and the Busy board form (A or B) played.
+- Total time spent and allowed by the experimenter
+- Number of times the child taps on every input
+- 
