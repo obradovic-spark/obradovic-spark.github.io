@@ -1,0 +1,2 @@
+- <i>Exploration</i> and <i>Engagement</i> have a stronger positive correlation with children’s performance on the knowledge test than total play time, indicating that quality of exploration is more predictive of children’s learning than quantity of exploration. 
+- Busy Board task metrics show a significant, positive linear association with age. 
