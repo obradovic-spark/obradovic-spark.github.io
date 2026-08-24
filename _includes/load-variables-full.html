@@ -1,0 +1,17 @@
+{% comment %}
+Loads _content/<task>/variables-recorded-full.md and renders the full variables page.
+{% endcomment %}
+{% assign task = include.task %}
+{% assign path_variables_full = '_content/' | append: task | append: '/variables-recorded-full.md' %}
+{% capture variables_full %}{% include {{ path_variables_full }} %}{% endcapture %}
+
+<article class="task-report" data-task="{{ task }}">
+  <section class="report-block" id="variables-full" data-section="variables-full">
+    <div class="report-body">
+      {% include _includes/helpers/tagged-markdown.html text=variables_full %}
+    </div>
+    <p class="variables-full-back">
+      <a href="{{ '/' | append: task | append: '/' | relative_url }}">← Back to task page</a>
+    </p>
+  </section>
+</article>
