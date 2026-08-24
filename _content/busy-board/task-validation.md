@@ -1,0 +1,3 @@
+- Metrics for this assessment have <b>high internal consistency</b>.
+- The task demonstrates some <b>evidence of convergent validity</b> with teacher-reported curiosity and child-reported preference for challenges. It is also positively correlated with other curiosity and exploration tasks. 
+- The validation results are <b>stable across child gender</b>. 
