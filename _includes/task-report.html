@@ -34,6 +34,19 @@
               <span class="video-facade-play-icon" aria-hidden="true"></span>
             </span>
           </button>
+          <div class="video-player-host" hidden></div>
+          <div class="video-chrome" hidden>
+            <button type="button" class="video-chrome-center" aria-label="Play">
+              <span class="video-chrome-center-icon" aria-hidden="true"></span>
+            </button>
+            <div class="video-chrome-dock">
+              <button type="button" class="video-chrome-toggle" aria-label="Pause"></button>
+              <div class="video-chrome-track" role="slider" aria-label="Seek" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="video-chrome-track-fill"></div>
+              </div>
+              <span class="video-chrome-time">0:00</span>
+            </div>
+          </div>
         </div>
       {% elsif trailer_url contains 'youtube.com' %}
         {% assign youtube_id = trailer_url | split: 'v=' | last | split: '&' | first %}
@@ -50,6 +63,19 @@
               <span class="video-facade-play-icon" aria-hidden="true"></span>
             </span>
           </button>
+          <div class="video-player-host" hidden></div>
+          <div class="video-chrome" hidden>
+            <button type="button" class="video-chrome-center" aria-label="Play">
+              <span class="video-chrome-center-icon" aria-hidden="true"></span>
+            </button>
+            <div class="video-chrome-dock">
+              <button type="button" class="video-chrome-toggle" aria-label="Pause"></button>
+              <div class="video-chrome-track" role="slider" aria-label="Seek" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="video-chrome-track-fill"></div>
+              </div>
+              <span class="video-chrome-time">0:00</span>
+            </div>
+          </div>
         </div>
       {% elsif trailer_url != '' %}
         <div class="video-embed">

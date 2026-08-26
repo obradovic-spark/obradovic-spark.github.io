@@ -60,24 +60,205 @@
     });
   });
 
-  document.querySelectorAll(".video-embed--youtube").forEach(function (embed) {
+  var youtubeApiReady = null;
+
+  function whenYouTubeApiReady(callback) {
+    if (window.YT && window.YT.Player) {
+      callback();
+      return;
+    }
+    if (!youtubeApiReady) {
+      youtubeApiReady = [];
+      var previous = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (typeof previous === "function") previous();
+        youtubeApiReady.forEach(function (fn) {
+          fn();
+        });
+        youtubeApiReady = null;
+      };
+      if (!document.getElementById("youtube-iframe-api")) {
+        var script = document.createElement("script");
+        script.id = "youtube-iframe-api";
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
+      }
+    }
+    youtubeApiReady.push(callback);
+  }
+
+  function formatTime(totalSeconds) {
+    var seconds = Math.max(0, Math.floor(totalSeconds || 0));
+    var mins = Math.floor(seconds / 60);
+    var secs = seconds % 60;
+    return mins + ":" + (secs < 10 ? "0" : "") + secs;
+  }
+
+  function setupYouTubePlayer(embed) {
     var facade = embed.querySelector(".video-facade");
+    var host = embed.querySelector(".video-player-host");
+    var chrome = embed.querySelector(".video-chrome");
+    var centerBtn = embed.querySelector(".video-chrome-center");
+    var toggleBtn = embed.querySelector(".video-chrome-toggle");
+    var track = embed.querySelector(".video-chrome-track");
+    var fill = embed.querySelector(".video-chrome-track-fill");
+    var timeLabel = embed.querySelector(".video-chrome-time");
     var videoId = embed.getAttribute("data-youtube-id");
-    if (!facade || !videoId) return;
+    if (!facade || !host || !chrome || !videoId) return;
+
+    var player = null;
+    var progressTimer = null;
+    var seeking = false;
+
+    function setPlayingUi(isPlaying) {
+      embed.classList.toggle("is-playing", isPlaying);
+      embed.classList.toggle("is-paused", !isPlaying);
+      toggleBtn.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
+      centerBtn.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
+    }
+
+    function updateProgress() {
+      if (!player || typeof player.getCurrentTime !== "function") return;
+      var current = player.getCurrentTime() || 0;
+      var duration = player.getDuration() || 0;
+      var percent = duration ? (current / duration) * 100 : 0;
+      if (!seeking) {
+        fill.style.width = percent + "%";
+        track.setAttribute("aria-valuenow", String(Math.round(percent)));
+      }
+      timeLabel.textContent =
+        formatTime(current) + (duration ? " / " + formatTime(duration) : "");
+    }
+
+    function startProgressTimer() {
+      window.clearInterval(progressTimer);
+      progressTimer = window.setInterval(updateProgress, 250);
+    }
+
+    function stopProgressTimer() {
+      window.clearInterval(progressTimer);
+      progressTimer = null;
+    }
+
+    function togglePlayback() {
+      if (!player || typeof player.getPlayerState !== "function") return;
+      if (player.getPlayerState() === window.YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+    }
+
+    function seekFromEvent(event) {
+      if (!player || typeof player.getDuration !== "function") return;
+      var rect = track.getBoundingClientRect();
+      var ratio = rect.width
+        ? Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width))
+        : 0;
+      var duration = player.getDuration() || 0;
+      player.seekTo(duration * ratio, true);
+      fill.style.width = ratio * 100 + "%";
+      updateProgress();
+    }
+
+    embed.addEventListener("mouseenter", function () {
+      embed.classList.add("is-hovering");
+    });
+
+    embed.addEventListener("mouseleave", function () {
+      embed.classList.remove("is-hovering");
+      seeking = false;
+    });
+
+    centerBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      togglePlayback();
+    });
+
+    toggleBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      togglePlayback();
+    });
+
+    track.addEventListener("pointerdown", function (event) {
+      seeking = true;
+      seekFromEvent(event);
+      track.setPointerCapture(event.pointerId);
+    });
+
+    track.addEventListener("pointermove", function (event) {
+      if (!seeking) return;
+      seekFromEvent(event);
+    });
+
+    track.addEventListener("pointerup", function () {
+      seeking = false;
+      updateProgress();
+    });
+
+    track.addEventListener("pointercancel", function () {
+      seeking = false;
+    });
+
+    chrome.addEventListener("click", function (event) {
+      if (event.target === chrome) {
+        togglePlayback();
+      }
+    });
 
     facade.addEventListener("click", function () {
-      var iframe = document.createElement("iframe");
-      iframe.src =
-        "https://www.youtube-nocookie.com/embed/" +
-        encodeURIComponent(videoId) +
-        "?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white&cc_load_policy=0";
-      iframe.title = "Task trailer";
-      iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.setAttribute("width", "100%");
-      iframe.setAttribute("height", "100%");
-      embed.replaceChildren(iframe);
+      if (player) return;
+
+      facade.hidden = true;
+      facade.setAttribute("aria-hidden", "true");
+      host.hidden = false;
+      chrome.hidden = false;
+      embed.classList.add("is-active", "is-hovering", "is-paused");
+
+      whenYouTubeApiReady(function () {
+        player = new window.YT.Player(host, {
+          videoId: videoId,
+          width: "100%",
+          height: "100%",
+          host: "https://www.youtube-nocookie.com",
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            iv_load_policy: 3,
+            modestbranding: 1,
+            playsinline: 1,
+            rel: 0,
+            cc_load_policy: 0,
+            origin: window.location.origin
+          },
+          events: {
+            onReady: function (event) {
+              event.target.playVideo();
+              updateProgress();
+            },
+            onStateChange: function (event) {
+              var state = event.data;
+              if (state === window.YT.PlayerState.PLAYING) {
+                setPlayingUi(true);
+                startProgressTimer();
+              } else if (
+                state === window.YT.PlayerState.PAUSED ||
+                state === window.YT.PlayerState.ENDED
+              ) {
+                setPlayingUi(false);
+                stopProgressTimer();
+                updateProgress();
+              } else if (state === window.YT.PlayerState.BUFFERING) {
+                updateProgress();
+              }
+            }
+          }
+        });
+      });
     });
-  });
+  }
+
+  document.querySelectorAll(".video-embed--youtube").forEach(setupYouTubePlayer);
 })();
