@@ -1,6 +1,6 @@
 ---
 layout: magic
-title: Scientific reasoning
+title: Scientific reasoning: Garden task
 task: scientific-reasoning
 permalink: /scientific-reasoning/
 ---

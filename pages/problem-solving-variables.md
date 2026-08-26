@@ -1,9 +1,9 @@
 ---
 layout: magic
-title: Full list of variables stored in the Problem solving task
+title: Full list of variables stored for Problem solving: Egg rescue
 task: problem-solving
 variables_full: true
-task_display_name: Problem solving
+task_display_name: Problem solving: Egg rescue
 permalink: /problem-solving/variables/
 ---
 
