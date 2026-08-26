@@ -59,4 +59,25 @@
       }
     });
   });
+
+  document.querySelectorAll(".video-embed--youtube").forEach(function (embed) {
+    var facade = embed.querySelector(".video-facade");
+    var videoId = embed.getAttribute("data-youtube-id");
+    if (!facade || !videoId) return;
+
+    facade.addEventListener("click", function () {
+      var iframe = document.createElement("iframe");
+      iframe.src =
+        "https://www.youtube-nocookie.com/embed/" +
+        encodeURIComponent(videoId) +
+        "?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white&cc_load_policy=0";
+      iframe.title = "Task trailer";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute("width", "100%");
+      iframe.setAttribute("height", "100%");
+      embed.replaceChildren(iframe);
+    });
+  });
 })();

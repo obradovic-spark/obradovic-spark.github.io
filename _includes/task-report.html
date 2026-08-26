@@ -9,37 +9,55 @@
     {% assign trailer_url = include.task_trailer | strip %}
     <div class="task-trailer">
       <h3 class="report-subheading report-subheading--centered">Task trailer</h3>
-      <div class="video-embed">
-        {% if trailer_url contains 'vimeo.com' %}
-          {% assign vimeo_id = trailer_url | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | last %}
+      {% if trailer_url contains 'vimeo.com' %}
+        {% assign vimeo_id = trailer_url | split: 'vimeo.com/' | last | split: '?' | first | split: '/' | last %}
+        <div class="video-embed">
           <iframe
-            src="https://player.vimeo.com/video/{{ vimeo_id }}"
+            src="https://player.vimeo.com/video/{{ vimeo_id }}?title=0&byline=0&portrait=0"
             title="Task trailer"
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
             loading="lazy"></iframe>
-        {% elsif trailer_url contains 'youtu.be/' %}
-          {% assign youtube_id = trailer_url | split: 'youtu.be/' | last | split: '?' | first | split: '/' | first %}
-          <iframe
-            src="https://www.youtube.com/embed/{{ youtube_id }}"
-            title="Task trailer"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"></iframe>
-        {% elsif trailer_url contains 'youtube.com' %}
-          {% assign youtube_id = trailer_url | split: 'v=' | last | split: '&' | first %}
-          <iframe
-            src="https://www.youtube.com/embed/{{ youtube_id }}"
-            title="Task trailer"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"></iframe>
-        {% elsif trailer_url != '' %}
+        </div>
+      {% elsif trailer_url contains 'youtu.be/' %}
+        {% assign youtube_id = trailer_url | split: 'youtu.be/' | last | split: '?' | first | split: '/' | first %}
+        <div class="video-embed video-embed--youtube" data-youtube-id="{{ youtube_id }}">
+          <button type="button" class="video-facade" aria-label="Play task trailer">
+            <img
+              class="video-facade-poster"
+              src="https://i.ytimg.com/vi/{{ youtube_id }}/hqdefault.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async">
+            <span class="video-facade-play">
+              <span class="video-facade-play-label">Play trailer</span>
+              <span class="video-facade-play-icon" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+      {% elsif trailer_url contains 'youtube.com' %}
+        {% assign youtube_id = trailer_url | split: 'v=' | last | split: '&' | first %}
+        <div class="video-embed video-embed--youtube" data-youtube-id="{{ youtube_id }}">
+          <button type="button" class="video-facade" aria-label="Play task trailer">
+            <img
+              class="video-facade-poster"
+              src="https://i.ytimg.com/vi/{{ youtube_id }}/hqdefault.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async">
+            <span class="video-facade-play">
+              <span class="video-facade-play-label">Play trailer</span>
+              <span class="video-facade-play-icon" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+      {% elsif trailer_url != '' %}
+        <div class="video-embed">
           <p class="video-fallback">
             <a href="{{ trailer_url }}" target="_blank" rel="noopener noreferrer">Watch the task trailer</a>
           </p>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
     </div>
 
     <div class="report-body report-body--after-trailer">
