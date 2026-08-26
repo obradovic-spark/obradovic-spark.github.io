@@ -1,6 +1,6 @@
 ---
 layout: magic
-title: Problem solving: Egg rescue
+title: "Problem solving: Egg rescue"
 task: problem-solving
 permalink: /problem-solving/
 ---
