@@ -1322,16 +1322,183 @@ body[data-active-task="challenge-preference"] {
   opacity: 1;
 }
 
+/* Mobile-only chrome: hidden on desktop */
+.mobile-topbar,
+.nav-overlay {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .sidebar {
+  :root {
+    --mobile-topbar-height: 3.65rem;
+  }
+
+  html {
+    scroll-padding-top: calc(var(--mobile-topbar-height) + env(safe-area-inset-top, 0px) + 0.5rem);
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     position: sticky;
     top: 0;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    border-right: none;
+    z-index: 230;
+    box-sizing: border-box;
+    height: calc(var(--mobile-topbar-height) + env(safe-area-inset-top, 0px));
+    padding: calc(0.55rem + env(safe-area-inset-top, 0px)) 0.85rem 0.55rem;
+    background: var(--surface);
     border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  body[data-active-task]:not([data-active-task="intro"]) .mobile-topbar {
+    border-bottom-width: 3px;
+    border-bottom-color: var(--task-accent);
+  }
+
+  .mobile-brand {
+    flex-shrink: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .mobile-current {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle:focus-visible {
+    border-color: var(--text-muted);
+    outline: none;
+  }
+
+  .mobile-menu-icon {
+    position: relative;
+    display: block;
+    width: 1.05rem;
+    height: 0.78rem;
+  }
+
+  .mobile-menu-icon span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
+  }
+
+  .mobile-menu-icon span:nth-child(1) { top: 0; }
+  .mobile-menu-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .mobile-menu-icon span:nth-child(3) { bottom: 0; }
+
+  body.nav-open .mobile-menu-icon span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  body.nav-open .mobile-menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  body.nav-open .mobile-menu-icon span:nth-child(3) {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .mobile-menu-label--close {
+    display: none;
+  }
+
+  body.nav-open .mobile-menu-label--open {
+    display: none;
+  }
+
+  body.nav-open .mobile-menu-label--close {
+    display: inline;
+  }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    background: rgba(28, 25, 23, 0.42);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+  }
+
+  body.nav-open .nav-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: calc(var(--mobile-topbar-height) + env(safe-area-inset-top, 0px));
+    left: 0;
+    z-index: 220;
+    width: min(20.5rem, 88vw);
+    height: calc(100dvh - var(--mobile-topbar-height) - env(safe-area-inset-top, 0px));
+    padding: 1rem 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    transform: translateX(-110%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.22s ease, visibility 0.22s ease;
+    overscroll-behavior: contain;
+  }
+
+  body.nav-open .sidebar {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .site-nav {
@@ -1404,5 +1571,13 @@ body[data-active-task="challenge-preference"] {
 
   .report-block {
     padding: 1.25rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .nav-overlay,
+    .mobile-menu-icon span {
+      transition: none;
+    }
   }
 }

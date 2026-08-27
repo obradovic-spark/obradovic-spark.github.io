@@ -60,6 +60,71 @@
     });
   });
 
+  var mobileToggle = document.querySelector(".mobile-menu-toggle");
+  var sidebar = document.querySelector(".sidebar");
+  var overlay = document.querySelector(".nav-overlay");
+  var mobileMq = window.matchMedia("(max-width: 768px)");
+
+  function setMobileNavOpen(open, options) {
+    options = options || {};
+    if (!mobileToggle || !sidebar) return;
+
+    if (!mobileMq.matches) {
+      document.body.classList.remove("nav-open");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      sidebar.removeAttribute("aria-hidden");
+      if ("inert" in sidebar) sidebar.inert = false;
+      return;
+    }
+
+    document.body.classList.toggle("nav-open", open);
+    mobileToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    sidebar.setAttribute("aria-hidden", open ? "false" : "true");
+    if ("inert" in sidebar) sidebar.inert = !open;
+
+    if (!open && options.focusToggle) {
+      mobileToggle.focus();
+    }
+  }
+
+  if (mobileToggle && sidebar) {
+    setMobileNavOpen(false);
+
+    mobileToggle.addEventListener("click", function () {
+      setMobileNavOpen(!document.body.classList.contains("nav-open"));
+    });
+
+    if (overlay) {
+      overlay.addEventListener("click", function () {
+        setMobileNavOpen(false, { focusToggle: true });
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && document.body.classList.contains("nav-open")) {
+        setMobileNavOpen(false, { focusToggle: true });
+      }
+    });
+
+    sidebar.querySelectorAll(".section-link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (mobileMq.matches) {
+          setMobileNavOpen(false);
+        }
+      });
+    });
+
+    function onBreakpointChange() {
+      setMobileNavOpen(false);
+    }
+
+    if (typeof mobileMq.addEventListener === "function") {
+      mobileMq.addEventListener("change", onBreakpointChange);
+    } else if (typeof mobileMq.addListener === "function") {
+      mobileMq.addListener(onBreakpointChange);
+    }
+  }
+
   var youtubeApiReady = null;
 
   function whenYouTubeApiReady(callback) {
