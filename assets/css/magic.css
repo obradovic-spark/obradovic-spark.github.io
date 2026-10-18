@@ -1021,9 +1021,18 @@ body[data-active-task="challenge-preference"] {
 }
 
 .io-map-scroll {
-  overflow: visible;
+  --io-fit-w: 72rem;
+  container-type: inline-size;
+  overflow: hidden;
   max-width: 100%;
   padding: 0.9rem 0.1rem 0.75rem;
+}
+
+@container (max-width: 52rem) {
+  .io-board {
+    width: var(--io-fit-w);
+    zoom: calc(100cqw / var(--io-fit-w));
+  }
 }
 
 .io-board {
