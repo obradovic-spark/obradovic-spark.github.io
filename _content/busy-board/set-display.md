@@ -396,6 +396,15 @@
           </div>
           <p class="io-out-title">Juice</p>
           <figure>
+            <div class="io-path-step io-path-step--reset">
+              <span class="io-crank io-crank--mini">
+                <img class="io-crank__handle" src="{{ bb | append: 'Images_Input6_crank_handle_9.png' | relative_url }}" alt="Gray crank, returns the glass to empty">
+              </span>
+              <svg class="io-path-arrow io-path-arrow--level" viewBox="0 0 100 56" aria-hidden="true">
+                <path d="M78 28 L18 28" fill="none" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
+                <path d="M18 28 L30 21 L30 35 Z" fill="#4a4a4a"/>
+              </svg>
+            </div>
             <img src="{{ bb | append: 'Output_juice_empty.png' | relative_url }}" alt="Empty juice glass">
             <figcaption>Off</figcaption>
           </figure>

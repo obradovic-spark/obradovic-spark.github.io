@@ -1504,6 +1504,10 @@ body[data-active-task="challenge-preference"] {
   transform: translateX(-0.85rem);
 }
 
+.io-path-step--reset .io-crank--mini {
+  transform: translate(-0.85rem, 1.05rem);
+}
+
 .io-path-step .io-crank__handle {
   width: 92%;
   height: auto;
