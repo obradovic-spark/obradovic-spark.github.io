@@ -22,10 +22,15 @@
   </div>
 </div>
 
-<h3 class="report-subheading io-map-heading" id="io-form-b-title"><span class="io-map-mark" aria-hidden="true"></span>Form B: Input/Output connections</h3>
-
 {% assign bb = '/assets/images/busy-board/screen_objects/' %}
-<section class="io-map" aria-labelledby="io-form-b-title">
+<details class="io-map-panel">
+  <summary class="report-subheading io-map-heading" id="io-form-b-title">
+    <span class="io-map-mark" aria-hidden="true"></span>
+    <span class="io-map-heading-text">Form B: Input/Output connections</span>
+    <span class="io-map-hint io-map-hint--show">(Click here to display)</span>
+    <span class="io-map-hint io-map-hint--hide">(Click to hide)</span>
+  </summary>
+  <section class="io-map" aria-labelledby="io-form-b-title">
   <div class="io-map-scroll">
     <div class="io-board">
       <p class="io-inputs-legend">Input objects</p>
@@ -534,3 +539,4 @@
     </div>
   </div>
 </section>
+</details>

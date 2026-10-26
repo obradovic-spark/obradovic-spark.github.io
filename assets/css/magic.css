@@ -996,6 +996,19 @@ body[data-active-task="challenge-preference"] {
 }
 
 /* Input to output schematic */
+.io-map-panel {
+  margin-top: 0.35rem;
+}
+
+.io-map-panel > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.io-map-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
 .io-map {
   margin-top: 0.15rem;
   max-width: 100%;
@@ -1003,12 +1016,41 @@ body[data-active-task="challenge-preference"] {
 
 .io-map-heading {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.45rem;
   text-align: left;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--task-accent-deep, var(--text));
+  user-select: none;
+}
+
+.io-map-heading:hover {
+  color: var(--task-accent, var(--task-accent-deep));
+}
+
+.io-map-heading-text {
+  flex: 0 1 auto;
+}
+
+.io-map-hint {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.io-map-hint--hide {
+  display: none;
+}
+
+.io-map-panel[open] .io-map-hint--show {
+  display: none;
+}
+
+.io-map-panel[open] .io-map-hint--hide {
+  display: inline;
 }
 
 .io-map-mark {
@@ -1018,6 +1060,11 @@ body[data-active-task="challenge-preference"] {
   border-top: 0.38rem solid transparent;
   border-bottom: 0.38rem solid transparent;
   border-left: 0.55rem solid var(--task-accent, #ec4899);
+  transition: transform 0.15s ease;
+}
+
+.io-map-panel[open] .io-map-mark {
+  transform: rotate(90deg);
 }
 
 .io-map-scroll {
