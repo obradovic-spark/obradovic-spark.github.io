@@ -1262,6 +1262,17 @@ body[data-active-task="challenge-preference"] {
   max-height: 1.8rem;
 }
 
+.io-state img.io-green-lever {
+  max-width: 4.6rem;
+  max-height: 1.35rem;
+  transform-origin: 12% 50%;
+}
+
+.io-state img.io-green-lever--on {
+  max-height: 3.4rem;
+  transform: rotate(45deg);
+}
+
 .io-state-link {
   position: relative;
   align-self: stretch;
@@ -1461,6 +1472,10 @@ body[data-active-task="challenge-preference"] {
   margin: 0 auto;
 }
 
+.io-outs img.io-gears {
+  transform: rotate(-90deg) scale(0.7);
+}
+
 .io-wheels__pair {
   position: relative;
   width: 3.5rem;
@@ -1551,8 +1566,30 @@ body[data-active-task="challenge-preference"] {
   transform: translateX(-0.85rem);
 }
 
+.io-path-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  z-index: 1;
+  transform: translateX(-0.55rem);
+}
+
+.io-path-mini img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
 .io-path-step--reset .io-crank--mini {
   transform: translate(-0.85rem, 1.05rem);
+}
+
+.io-path-step--reset .io-path-mini {
+  transform: translate(-0.55rem, 1.05rem);
 }
 
 .io-path-step .io-crank__handle {
