@@ -941,6 +941,7 @@ body[data-active-task="challenge-preference"] {
   width: 100%;
   max-width: 48rem;
   margin: 0 auto;
+  scroll-margin-top: 1.5rem;
 }
 
 .set-display-matrix {
@@ -1024,6 +1025,7 @@ body[data-active-task="challenge-preference"] {
   font-weight: 600;
   color: var(--task-accent-deep, var(--text));
   user-select: none;
+  scroll-margin-top: 1.5rem;
 }
 
 .io-map-heading:hover {
@@ -1648,6 +1650,12 @@ body[data-active-task="challenge-preference"] {
 .report-inline-value .hi {
   font-weight: 700;
   color: var(--task-accent-deep);
+}
+
+.report-body .hi a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 
 .report-body .key,

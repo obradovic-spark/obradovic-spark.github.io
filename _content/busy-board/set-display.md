@@ -1,4 +1,4 @@
-<div class="set-display set-display--matrix" role="group" aria-label="Busy board display forms">
+<div id="busy-board-layouts" class="set-display set-display--matrix" role="group" aria-label="Busy board display forms">
   <div class="set-display-matrix">
     <div class="set-display-matrix__corner" aria-hidden="true"></div>
     <div class="set-display-matrix__col-label">Default layout</div>
