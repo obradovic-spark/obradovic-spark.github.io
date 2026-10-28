@@ -148,14 +148,24 @@
         </div>
       </div>
 
-      <div class="io-col">
-        <p class="io-name">Left toggle</p>
+      <div class="io-col io-col--switch io-col--switch-left">
+        <p class="io-name io-switch-name">Left switch</p>
         <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_left@2x.png' | relative_url }}" alt="Left toggle off">
+          <div class="io-switch-assembly" aria-label="Switch panel, left switch off">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Left switch off">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Middle switch off">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Right switch off">
+          </div>
         </div>
         <div class="io-state-link" aria-hidden="true"></div>
         <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_right@2x.png' | relative_url }}" alt="Left toggle on">
+          <div class="io-switch-assembly" aria-label="Switch panel, left switch on">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_on.png' | relative_url }}" alt="Left switch on">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Middle switch off">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Right switch off">
+          </div>
         </div>
         <div class="io-arrow"></div>
         <div class="io-outs">
@@ -165,51 +175,44 @@
           </div>
           <p class="io-out-title">Red light</p>
           <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color1_off.png' | relative_url }}" alt="Red light off">
+            <div class="io-switch-assembly" aria-label="Light panel, all lights off">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_off@2x.png' | relative_url }}" alt="Red light off">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_off@2x.png' | relative_url }}" alt="Green light off">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_off.png' | relative_url }}" alt="Blue light off">
+            </div>
             <figcaption>Off</figcaption>
           </figure>
           <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color1_on.png' | relative_url }}" alt="Red light on">
+            <div class="io-switch-assembly" aria-label="Light panel, red light on">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_on@2x.png' | relative_url }}" alt="Red light on">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_off@2x.png' | relative_url }}" alt="Green light off">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_off.png' | relative_url }}" alt="Blue light off">
+            </div>
             <figcaption>Probability: 1/3</figcaption>
           </figure>
         </div>
       </div>
 
-      <div class="io-col">
-        <p class="io-name">Middle toggle</p>
+      <div class="io-col io-col--switch io-col--switch-mid">
+        <p class="io-name io-switch-name">Middle switch</p>
         <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_left@2x.png' | relative_url }}" alt="Middle toggle off">
-        </div>
-        <div class="io-state-link" aria-hidden="true"></div>
-        <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_right@2x.png' | relative_url }}" alt="Middle toggle on">
-        </div>
-        <div class="io-arrow"></div>
-        <div class="io-outs">
-          <div class="io-out-head">
-            <p class="io-contingency">The blue light turns on with <strong>66% probability</strong>.</p>
-            <div class="io-out-stem" aria-hidden="true"></div>
+          <div class="io-switch-assembly" aria-label="Switch panel, middle switch off">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Left switch off">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Middle switch off">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Right switch off">
           </div>
-          <p class="io-out-title">Blue light</p>
-          <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color2_off.png' | relative_url }}" alt="Blue light off">
-            <figcaption>Off</figcaption>
-          </figure>
-          <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color2_on.png' | relative_url }}" alt="Blue light on">
-            <figcaption>Probability: 2/6</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="io-col">
-        <p class="io-name">Right toggle</p>
-        <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_left@2x.png' | relative_url }}" alt="Right toggle off">
         </div>
         <div class="io-state-link" aria-hidden="true"></div>
         <div class="io-state">
-          <img class="io-toggle" src="{{ bb | append: 'Images_Input2_toggle_right@2x.png' | relative_url }}" alt="Right toggle on">
+          <div class="io-switch-assembly" aria-label="Switch panel, middle switch on">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Left switch off">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_on.png' | relative_url }}" alt="Middle switch on">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Right switch off">
+          </div>
         </div>
         <div class="io-arrow"></div>
         <div class="io-outs">
@@ -219,12 +222,69 @@
           </div>
           <p class="io-out-title">Green light</p>
           <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color3_off.png' | relative_url }}" alt="Green light off">
+            <div class="io-switch-assembly" aria-label="Light panel, all lights off">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_off@2x.png' | relative_url }}" alt="Red light off">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_off@2x.png' | relative_url }}" alt="Green light off">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_off.png' | relative_url }}" alt="Blue light off">
+            </div>
             <figcaption>Off</figcaption>
           </figure>
           <figure>
-            <img src="{{ bb | append: 'Output_alarmlight_color3_on.png' | relative_url }}" alt="Green light on">
+            <div class="io-switch-assembly" aria-label="Light panel, green light on">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_off@2x.png' | relative_url }}" alt="Red light off">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_on@2x.png' | relative_url }}" alt="Green light on">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_off.png' | relative_url }}" alt="Blue light off">
+            </div>
             <figcaption>Probability: 1</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="io-col io-col--switch io-col--switch-right">
+        <p class="io-name io-switch-name">Right switch</p>
+        <div class="io-state">
+          <div class="io-switch-assembly" aria-label="Switch panel, right switch off">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Left switch off">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Middle switch off">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Right switch off">
+          </div>
+        </div>
+        <div class="io-state-link" aria-hidden="true"></div>
+        <div class="io-state">
+          <div class="io-switch-assembly" aria-label="Switch panel, right switch on">
+            <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+            <img class="io-switch io-switch--left" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Left switch off">
+            <img class="io-switch io-switch--mid" src="{{ bb | append: 'Input3_switch_off.png' | relative_url }}" alt="Middle switch off">
+            <img class="io-switch io-switch--right" src="{{ bb | append: 'Input3_switch_on.png' | relative_url }}" alt="Right switch on">
+          </div>
+        </div>
+        <div class="io-arrow"></div>
+        <div class="io-outs">
+          <div class="io-out-head">
+            <p class="io-contingency">The blue light turns on with <strong>66% probability</strong>.</p>
+            <div class="io-out-stem" aria-hidden="true"></div>
+          </div>
+          <p class="io-out-title">Blue light</p>
+          <figure>
+            <div class="io-switch-assembly" aria-label="Light panel, all lights off">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_off@2x.png' | relative_url }}" alt="Red light off">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_off@2x.png' | relative_url }}" alt="Green light off">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_off.png' | relative_url }}" alt="Blue light off">
+            </div>
+            <figcaption>Off</figcaption>
+          </figure>
+          <figure>
+            <div class="io-switch-assembly" aria-label="Light panel, blue light on">
+              <img class="io-switch-panel" src="{{ bb | append: 'switch_panel@2x.png' | relative_url }}" alt="">
+              <img class="io-light io-light--left" src="{{ bb | append: 'Output3_3lights_red_off@2x.png' | relative_url }}" alt="Red light off">
+              <img class="io-light io-light--mid" src="{{ bb | append: 'Output3_3lights_green_off@2x.png' | relative_url }}" alt="Green light off">
+              <img class="io-light io-light--right" src="{{ bb | append: 'Output3_3lights_blue_on.png' | relative_url }}" alt="Blue light on">
+            </div>
+            <figcaption>Probability: 2/3</figcaption>
           </figure>
         </div>
       </div>
@@ -668,7 +728,7 @@
           </figure>
           <figure>
             <img src="{{ bb | append: 'Output_alarmlight_color2_on.png' | relative_url }}" alt="Blue light on">
-            <figcaption>Probability: 2/6</figcaption>
+            <figcaption>Probability: 2/3</figcaption>
           </figure>
         </div>
       </div>
@@ -974,19 +1034,6 @@
             </div>
             <img src="{{ bb | append: 'Output_juice_color7.png' | relative_url }}" alt="Purple juice">
             <figcaption>Purple</figcaption>
-          </figure>
-          <figure>
-            <div class="io-path-step">
-              <span class="io-crank io-crank--mini">
-                <img class="io-crank__handle" src="{{ bb | append: 'Images_Input6_crank_handle_8.png' | relative_url }}" alt="Teal crank, between the purple juice and the teal juice">
-              </span>
-              <svg class="io-path-arrow" viewBox="0 0 100 56" aria-hidden="true">
-                <path d="M76 10 L26 36" fill="none" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
-                <path d="M26 36 L34.8 35.5 L30.8 28.6 Z" fill="#4a4a4a"/>
-              </svg>
-            </div>
-            <img src="{{ bb | append: 'Output_juice_color8.png' | relative_url }}" alt="Teal juice">
-            <figcaption>Teal</figcaption>
           </figure>
         </div>
       </div>

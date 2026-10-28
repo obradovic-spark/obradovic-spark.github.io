@@ -1183,6 +1183,123 @@ body[data-active-task="challenge-preference"] {
   align-items: start;
 }
 
+.io-col--switch {
+  --io-switch-panel-w: 7.6rem;
+  --io-switch-focus: 0.5;
+  --io-switch-focus-x: calc(50% + (var(--io-switch-focus) - 0.5) * var(--io-switch-panel-w));
+  overflow: visible;
+}
+
+.io-col--switch-left {
+  --io-switch-focus: 0.2;
+}
+
+.io-col--switch-mid {
+  --io-switch-focus: 0.5;
+}
+
+.io-col--switch-right {
+  --io-switch-focus: 0.8;
+}
+
+.io-switch-name {
+  position: relative;
+  z-index: 2;
+}
+
+.io-switch-name::before,
+.io-switch-name::after {
+  content: "";
+  position: absolute;
+  left: var(--io-switch-focus-x);
+  top: calc(100% + 0.06rem);
+  transform: translateX(-50%);
+}
+
+.io-switch-name::before {
+  width: 2px;
+  height: calc(var(--io-state-h) * 0.34);
+  background: var(--task-accent, #ec4899);
+  border-radius: 1px;
+}
+
+.io-switch-name::after {
+  top: calc(100% + 0.06rem + var(--io-state-h) * 0.34 - 1px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--task-accent, #ec4899);
+}
+
+.io-col--switch .io-state {
+  overflow: visible;
+}
+
+.io-col--switch .io-state-link::before,
+.io-col--switch .io-state-link::after,
+.io-col--switch .io-arrow::before,
+.io-col--switch .io-arrow::after {
+  left: var(--io-switch-focus-x);
+}
+
+.io-col--switch .io-out-stem {
+  align-self: flex-start;
+  margin-left: var(--io-switch-focus-x);
+  transform: translateX(-50%);
+}
+
+.io-col--switch .io-out-stem::after {
+  left: 50%;
+}
+
+.io-switch-assembly {
+  position: relative;
+  width: min(100%, var(--io-switch-panel-w));
+}
+
+.io-outs .io-switch-assembly {
+  margin: 0 auto;
+}
+
+.io-switch-panel {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 4.7rem;
+  object-fit: contain;
+}
+
+.io-switch-assembly .io-switch,
+.io-switch-assembly .io-light {
+  position: absolute;
+  top: 50%;
+  width: 24%;
+  max-width: none;
+  max-height: 78%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.io-switch-assembly .io-light {
+  width: 22%;
+  max-height: 70%;
+}
+
+.io-switch-assembly .io-switch--left,
+.io-switch-assembly .io-light--left {
+  left: 20%;
+}
+
+.io-switch-assembly .io-switch--mid,
+.io-switch-assembly .io-light--mid {
+  left: 50%;
+}
+
+.io-switch-assembly .io-switch--right,
+.io-switch-assembly .io-light--right {
+  left: 80%;
+}
+
 .io-rail-name,
 .io-rail-arrow {
   height: 100%;
@@ -1272,7 +1389,7 @@ body[data-active-task="challenge-preference"] {
 
 .io-state img.io-green-lever--on {
   max-height: 3.4rem;
-  transform: rotate(45deg);
+  transform: translateY(-0.55rem) rotate(45deg);
 }
 
 .io-state-link {
