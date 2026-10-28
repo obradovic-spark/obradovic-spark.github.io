@@ -1076,7 +1076,7 @@ body[data-active-task="challenge-preference"] {
 
 .task-flow-table {
   display: grid;
-  grid-template-columns: minmax(8.75rem, 11.5rem) minmax(0, 1fr);
+  grid-template-columns: minmax(9.5rem, 13.5rem) minmax(0, 1fr);
   width: 100%;
   border: 2px solid var(--task-accent-deep, #be185d);
   border-radius: 1rem;
@@ -1113,6 +1113,33 @@ body[data-active-task="challenge-preference"] {
   font-size: 1.12rem;
   font-weight: 600;
   color: #4b5563;
+}
+
+.task-flow-detail {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #6b7280;
+  line-height: 1.25;
+}
+
+/* Group stage types by label color (e.g. Same-different selection) */
+.task-flow-row--knowledge .task-flow-label {
+  background: color-mix(in srgb, var(--task-accent, #7c3aed) 16%, #fff);
+}
+
+.task-flow-row--matching .task-flow-label {
+  background: color-mix(in srgb, var(--task-accent-deep, #5b21b6) 10%, #ebe4ff);
+}
+
+.task-flow-row--knowledge:has(+ .task-flow-row--knowledge) .task-flow-label,
+.task-flow-row--matching:has(+ .task-flow-row--matching) .task-flow-label {
+  border-bottom-color: color-mix(in srgb, var(--task-accent-deep, #5b21b6) 22%, transparent);
+}
+
+.task-flow-row--knowledge + .task-flow-row--knowledge .task-flow-body,
+.task-flow-row--matching + .task-flow-row--matching .task-flow-body {
+  border-bottom-color: color-mix(in srgb, var(--task-accent-deep, #5b21b6) 28%, #e7e5e4);
 }
 
 .task-flow-body {
