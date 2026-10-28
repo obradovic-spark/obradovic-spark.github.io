@@ -1101,13 +1101,13 @@
         </div>
         <div class="task-flow-body" role="cell">
           <div class="task-flow-text">
-            <p class="task-flow-copy">After the exploration period ends, children complete a knowledge test designed to reveal whether exploration resulted in learning of the causal relations between inputs and outputs.</p>
+            <p class="task-flow-copy">After the exploration stage ends, children answer 10 questions designed to test whether their exploration resulted in learning of the causal relations between inputs and outputs.</p>
             <div class="task-flow-measure">
-              <p class="task-flow-measure-title">What we measure</p>
+              <p class="task-flow-measure-title">What we measure:</p>
               <ul class="task-flow-kept">
-                <li>First 7 questions: children touch the <strong>input</strong> that produces a described output</li>
-                <li>Remaining questions: children touch the <strong>output</strong> that would result from activating a described input</li>
-                <li>Accuracy on each item and overall knowledge test accuracy</li>
+                <li>Children's ability to <strong>identify the input</strong> associated with a given output.</li>
+                <li>Children's ability to identify which of the three <strong>probabilistic stimuli</strong> is activated <u>most</u> and <u>least</u> often.</li>
+                <li>Children's ability to identify the <strong>predictive</strong> nature of the color-changing input.</li>
               </ul>
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
