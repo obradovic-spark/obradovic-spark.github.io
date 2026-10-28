@@ -1058,3 +1058,65 @@
   </div>
 </section>
 </details>
+
+<details class="io-map-panel">
+  <summary class="report-subheading io-map-heading" id="task-flow-title">
+    <span class="io-map-mark" aria-hidden="true"></span>
+    <span class="io-map-heading-text">Task flow</span>
+    <span class="io-map-hint io-map-hint--show">(Click here to display)</span>
+    <span class="io-map-hint io-map-hint--hide">(Click to hide)</span>
+  </summary>
+  <section class="task-flow" aria-labelledby="task-flow-title">
+    <div class="task-flow-table" role="table" aria-label="Busy Board task stages">
+      <div class="task-flow-row" role="row">
+        <div class="task-flow-label" role="rowheader">
+          <span class="task-flow-stage">Stage 1:</span>
+          <span class="task-flow-name">Exploration</span>
+        </div>
+        <div class="task-flow-body" role="cell">
+          <div class="task-flow-text">
+            <div class="task-flow-copy">
+              <p>Children are instructed to play and explore by touching different things to figure out how the board works.</p>
+              <p>Children can press an X button to stop exploring (quitting exploration requires confirmation after pressing the X button), otherwise, the exploration stage ends automatically after six minutes of exploration.</p>
+            </div>
+            <div class="task-flow-measure">
+              <p class="task-flow-measure-title">What we measure</p>
+              <ul class="task-flow-kept">
+                <li>Amount of time the kid spends exploring</li>
+                <li>Every element clicked and when (timestamp)</li>                
+                <li>Whether the child tried to exit and changed their mind (i.e., clicked X button and then "Cancel")</li>
+              </ul>
+              <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
+            </div>
+          </div>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/busy-board/screen_Explore.png' | relative_url }}" alt="Busy Board exploration stage screenshot">
+          </figure>
+        </div>
+      </div>
+      <div class="task-flow-row" role="row">
+        <div class="task-flow-label" role="rowheader">
+          <span class="task-flow-stage">Stage 2:</span>
+          <span class="task-flow-name">Knowledge test</span>
+        </div>
+        <div class="task-flow-body" role="cell">
+          <div class="task-flow-text">
+            <p class="task-flow-copy">After the exploration period ends, children complete a knowledge test designed to reveal whether exploration resulted in learning of the causal relations between inputs and outputs.</p>
+            <div class="task-flow-measure">
+              <p class="task-flow-measure-title">What we measure</p>
+              <ul class="task-flow-kept">
+                <li>First 7 questions: children touch the <strong>input</strong> that produces a described output</li>
+                <li>Remaining questions: children touch the <strong>output</strong> that would result from activating a described input</li>
+                <li>Accuracy on each item and overall knowledge test accuracy</li>
+              </ul>
+              <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
+            </div>
+          </div>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/busy-board/screen_KT.png' | relative_url }}" alt="Busy Board knowledge test stage screenshot">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</details>
