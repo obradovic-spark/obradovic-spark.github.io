@@ -15,22 +15,27 @@
         <div class="task-flow-body" role="cell">
           <div class="task-flow-text">
             <div class="task-flow-copy">
-              <p>Description to be added.</p>
+              <p>Across <u>9 trials</u>, children are presented with <strong>distinct sets of 3-cards</strong> that vary across three dimensions:</p>
+              <ul>
+                <li><strong>Color:</strong> Yellow, Red, Blue.</li>
+                <li><strong>Shape:</strong> Circle, Square, Triangle.</li>
+                <li><strong>Size:</strong> Small, Medium, Big.</li>
+              </ul>
+              <p>On each trial, children have to click on the card that matches a description. For each trial, children are given two attempts (i.e., the trial repeats once if they answer wrong the first time).</p>
             </div>
             <div class="task-flow-measure">
-              <p class="task-flow-measure-title">What we measure</p>
+              <p class="task-flow-measure-title">What we measure:</p>                      
               <ul class="task-flow-kept">
-                <li>To be added.</li>
-              </ul>
+                <li>Children's ability to tell/identify the distinctive feature variations present in a set of cards.</li>
+              </ul>              
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_KT1.png' | relative_url }}" alt="Same-different selection knowledge test stage 1 screenshot">
           </figure>
         </div>
       </div>
-
       <div class="task-flow-row task-flow-row--matching" role="row">
         <div class="task-flow-label" role="rowheader">
           <span class="task-flow-stage">Stage 2:</span>
@@ -45,17 +50,16 @@
             <div class="task-flow-measure">
               <p class="task-flow-measure-title">What we measure</p>
               <ul class="task-flow-kept">
-                <li>To be added.</li>
+                <li>Children's understanding of the matching task.</li>
               </ul>
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_Practice.png' | relative_url }}" alt="Same-different selection matching practice block screenshot">
           </figure>
         </div>
       </div>
-
       <div class="task-flow-row task-flow-row--matching" role="row">
         <div class="task-flow-label" role="rowheader">
           <span class="task-flow-stage">Stage 3:</span>
@@ -70,17 +74,18 @@
             <div class="task-flow-measure">
               <p class="task-flow-measure-title">What we measure</p>
               <ul class="task-flow-kept">
-                <li>To be added.</li>
+                <li>Childrens' two pair-selections per trial.</li>
+                <li>Cognitive flexibility: Do children match figures across different dimensions?</li>
+                <li>Working memory: Do children repeat old selections?</li>
               </ul>
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_B2.png' | relative_url }}" alt="Same-different selection matching block 2 screenshot">
           </figure>
         </div>
       </div>
-
       <div class="task-flow-row task-flow-row--knowledge" role="row">
         <div class="task-flow-label" role="rowheader">
           <span class="task-flow-stage">Stage 4:</span>
@@ -100,12 +105,11 @@
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_KT2.png' | relative_url }}" alt="Same-different selection knowledge test stage 4 screenshot">
           </figure>
         </div>
       </div>
-
       <div class="task-flow-row task-flow-row--matching" role="row">
         <div class="task-flow-label" role="rowheader">
           <span class="task-flow-stage">Stage 5:</span>
@@ -120,17 +124,18 @@
             <div class="task-flow-measure">
               <p class="task-flow-measure-title">What we measure</p>
               <ul class="task-flow-kept">
-                <li>To be added.</li>
+                <li>Childrens' three pair-selections per trial.</li>
+                <li>Cognitive flexibility: Do children match figures across different dimensions?</li>
+                <li>Working memory: Do children repeat old selections?</li>
               </ul>
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_B3.png' | relative_url }}" alt="Same-different selection matching block 3 screenshot">
           </figure>
         </div>
       </div>
-
       <div class="task-flow-row task-flow-row--matching" role="row">
         <div class="task-flow-label" role="rowheader">
           <span class="task-flow-stage">Stage 6:</span>
@@ -145,13 +150,15 @@
             <div class="task-flow-measure">
               <p class="task-flow-measure-title">What we measure</p>
               <ul class="task-flow-kept">
-                <li>To be added.</li>
+                <li>Childrens' four pair-selections per trial.</li>
+                <li>Cognitive flexibility: Do children match figures across different dimensions?</li>
+                <li>Working memory: Do children repeat old selections?</li>
               </ul>
               <p class="task-flow-more">See more on the <hi><i><b><a href="#information-collected">Information collected and data processing</a></b></i></hi> section.</p>
             </div>
           </div>
-          <figure class="task-flow-shot task-flow-shot--pending" aria-label="Screenshot pending">
-            <span class="task-flow-shot-placeholder">Screenshot coming soon</span>
+          <figure class="task-flow-shot">
+            <img src="{{ '/assets/images/sds/screen_B4.png' | relative_url }}" alt="Same-different selection matching block 4 screenshot">
           </figure>
         </div>
       </div>

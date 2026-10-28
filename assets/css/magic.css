@@ -1174,12 +1174,30 @@ body[data-active-task="challenge-preference"] {
   line-height: 1.45;
 }
 
+.task-flow strong {
+  font-weight: 700;
+  color: var(--task-accent-deep);
+}
+
 .task-flow-copy p {
   margin: 0;
 }
 
 .task-flow-copy p + p {
   margin-top: 0.65rem;
+}
+
+.task-flow-copy ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.task-flow-copy li + li {
+  margin-top: 0.2rem;
+}
+
+.task-flow-copy ul + p {
+  margin-top: 0.75rem;
 }
 
 .task-flow-measure {
