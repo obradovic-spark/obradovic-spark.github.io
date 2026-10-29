@@ -95,7 +95,15 @@
         <div class="task-flow-body" role="cell">
           <div class="task-flow-text">
             <div class="task-flow-copy">
-              <p>Description to be added.</p>
+              <p>Across <u>10 trials</u>, children are presented with <strong>distinct sets of 4-cards</strong> and asked to select the one that matches a description. This second knowledge test introduces <strong>two new dimensions</strong> with <strong>four-levels</strong> per dimension.</p>
+              <ul>
+                <li><strong>Color:</strong> Green color is introduced.</li>
+                <li><strong>Shape:</strong> Star shape is introduced.</li>
+                <li><strong>Background (NEW):</strong> White, Gray, Black, Striped.</li>
+                <li><strong>Quantity (NEW):</strong> One, Two, Three, Four.</li>
+                <li><s><strong>Size:</strong> Small, Medium, Big.</s> (Discarded)</li>
+              </ul>
+              <p>Once again, children are given two attempts per trial (i.e., the trial repeats once if they answer wrong the first time).</p>
             </div>
             <div class="task-flow-measure">
               <p class="task-flow-measure-title">What we measure</p>
